@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:c="urn:import:gwt.material.design.client.custom">
+	<ui:style>
+		.navMobile{
+			margin-left: 30px;
+		}
+		.navHeader{
+			overflow: hidden;
+		}
+	</ui:style>
+	<g:HTMLPanel addStyleNames="navbar-fixed">
+		<nav>
+	      <g:HTMLPanel ui:field="wrapper" addStyleNames="nav-wrapper {style.navHeader}">
+	        <a href="#" class="brand-logo"><g:Image ui:field="imgLogo"/></a>
+	        <c:UnorderedList ui:field="navigation"  addStyleNames="right side-nav"/>
+	        
+	        <!-- Include this line below -->
+	        <a class="button-collapse {style.navMobile} blue-text" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+	        <!-- End -->
+	
+	      </g:HTMLPanel>
+	    </nav>
+	</g:HTMLPanel>
+</ui:UiBinder> 

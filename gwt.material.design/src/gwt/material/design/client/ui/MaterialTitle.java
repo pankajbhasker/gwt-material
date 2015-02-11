@@ -1,0 +1,66 @@
+package gwt.material.design.client.ui;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Widget;
+
+public class MaterialTitle extends Composite {
+
+	private static MaterialTitleUiBinder uiBinder = GWT
+			.create(MaterialTitleUiBinder.class);
+
+	interface MaterialTitleUiBinder extends UiBinder<Widget, MaterialTitle> {
+	}
+
+	private String title="";
+	private String description = "";
+	private String color="";
+	private MaterialTitle materialTitle;
+	
+	@UiField Label lblTitle, lblDescription;
+	
+	public MaterialTitle() {
+		initWidget(uiBinder.createAndBindUi(this));
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		lblDescription.setText(description);
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		lblTitle.setText(title);
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+		lblTitle.getElement().getStyle().setColor(color);
+	}
+
+	public MaterialTitle getMaterialTitle() {
+		return materialTitle;
+	}
+
+	public void setMaterialTitle(MaterialTitle materialTitle) {
+		this.materialTitle = materialTitle;
+	}
+	
+	
+
+}
