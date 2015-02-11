@@ -1,0 +1,45 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+	<ui:style>
+		.button{
+			vertical-align: top;
+			margin-left: 20px;
+		}
+		
+	</ui:style>
+	<g:HTMLPanel>
+		
+			<m:MaterialTitle title="Raised" description="The raised button is a standard button that signify actions and seek to give depth to a mostly flat page."/>
+	
+			<pre>
+<span class="tag">&lt;m:MaterialButton</span> <span class="attr">text</span>="Button" <span class="attr">color</span>="blue" <span class=".attr">display</span>="inline-block" <span class="attr">icon</span>="mdi-action-account-circle" <span class="attr">iconPosition</span>="left" <span class="tag">/></span>
+			</pre>
+		
+			<m:MaterialButton text="Button" addStyleNames="{style.button}" color="blue" display="inline-block"/>
+			<m:MaterialButton text="Button" addStyleNames="{style.button}" color="blue" display="inline-block" icon="mdi-action-account-circle"/>
+			<m:MaterialButton text="Button" addStyleNames="{style.button}" color="blue" display="inline-block"	icon="mdi-action-account-circle" iconPosition="left"/>
+		
+			
+		
+		
+			<m:MaterialTitle  title="Floating" description="The floating circular action button is meant for very important functions."/>
+			
+			<pre>
+<span class="tag">&lt;m:MaterialButton</span> <span class="attr">type</span>="floating"  <span class="attr">color</span>="blue" <span class="attr">display</span>="inline-block" <span class="attr">icon</span>="mdi-action-account-circle" <span class="tag">/></span>
+			</pre>
+			
+			<m:MaterialButton type="floating" size="large" text="+" addStyleNames="{style.button}" color="blue" display="inline-block"/>
+			<m:MaterialButton type="floating" size="large" text="+" addStyleNames="{style.button}" color="blue" display="inline-block" icon="mdi-action-account-circle"/>
+			
+			<m:MaterialTitle title="Flat" description="Flat buttons are usually used within elements that already have depth like cards or modals."/>
+			
+			<pre>
+<span class="tag">&lt;m:MaterialButton</span> <span class="attr">text</span>="Button" <span class="attr">type</span>="flat"  <span class="tag">/></span>
+			</pre>
+			
+			<m:MaterialButton type="flat" text="Button"  addStyleNames="{style.button}" color="blue" display="inline-block"/>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 
