@@ -23,7 +23,7 @@ public class MaterialDemo extends Composite {
 	}
 	
 	@UiField HTMLPanel contentPanel;
-	@UiField Label btnAbout, btnButtons, btnForms, btnDialogs, btnLoaders, btnMedia;
+	@UiField Label btnAbout, btnButtons, btnForms, btnDialogs, btnLoaders, btnMedia, btnCards;
 
 	
 	@UiField MaterialHome materialHome;
@@ -33,6 +33,7 @@ public class MaterialDemo extends Composite {
 	@UiField MaterialLoaders materialLoaders;
 	@UiField MaterialMedia materialMedia;
 	@UiField MaterialGettingStarted materialGettingStarted;
+	@UiField MaterialCard materialCards;
 	
 	@UiField MaterialNavBar navBar;
 	@UiField MaterialTopNav topNav;
@@ -81,6 +82,11 @@ public class MaterialDemo extends Composite {
 	@UiHandler("btnMedia")
 	void onMedia(ClickEvent e){
 		changeNav(materialMedia, "Media", "Media components include things that have to do with large media objects like Images, Video, Audio, etc.");
+	}
+	
+	@UiHandler("btnCards")
+	void onCards(ClickEvent e){
+		changeNav(materialCards, "Cards", "Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.");
 	}
 
 	

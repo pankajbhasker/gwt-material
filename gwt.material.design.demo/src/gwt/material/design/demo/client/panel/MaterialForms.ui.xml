@@ -3,20 +3,6 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:gwt.material.design.client.ui">
 	<ui:style>
-		pre{
-			padding-top: 20px;
-			white-space: pre;
-			background: #F3FBFF;
-			border: solid 1px rgba(51, 51, 51, 0.12);
-			font-size: 1.2em;
-			padding-left: 10px;
-		}
-		.tag{
-			color: #905;
-		}
-		.attr{
-			color: #690;
-		}
 	</ui:style>
 	<g:HTMLPanel>
 		
@@ -70,6 +56,22 @@
 <span class="tag">&lt;m:MaterialCheckBox </span> <span class="attr">text</span>="Red" <span class="tag">/></span>
 <span class="tag">&lt;m:MaterialCheckBox </span> <span class="attr">text</span>="Green" <span class="tag">/></span>
 		</pre>
+		
+		<m:MaterialTitle title="Switches" />
+		<m:MaterialSwitch />
+		
+		<pre>
+<span class="tag">&lt;m:MaterialSwitch </span> <span class="tag">/></span>
+		</pre>
+		
+		<m:MaterialTitle title="Range" />
+		<m:MaterialRange />
+		
+		<pre>
+<span class="tag">&lt;m:MaterialRange </span> <span class="tag">/></span>
+		</pre>
+		
+		
 		
 		<m:MaterialTitle title="Date Picker" description="Material Datepicker"/>
 		<m:MaterialDatePicker />

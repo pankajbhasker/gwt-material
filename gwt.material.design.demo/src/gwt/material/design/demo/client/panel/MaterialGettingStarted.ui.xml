@@ -31,7 +31,7 @@
 		
 		<m:MaterialTitle title="UiBinder usage" description="Assuming that you're using UIBinder, add the following namespace to the &lt;ui:UIBinder> element:"/>
 		<pre>
-<span class="tag">&lt;xmlns:m</span>="urn:import:gwt.material.design.client.ui" <span class="tag">/></span>
+<span class="tag">xmlns:m</span>="urn:import:gwt.material.design.client.ui" 
 		</pre>
 		
 		<m:MaterialTitle  description="Then you can easily use the m namespace in your widget design, like MaterialButton:"/>

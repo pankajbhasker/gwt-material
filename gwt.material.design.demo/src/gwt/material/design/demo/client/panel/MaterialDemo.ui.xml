@@ -26,16 +26,20 @@
 	</ui:style>	
 	<g:HTMLPanel >
 			<m:MaterialNavBar ui:field="navBar" color="white" logoResource="{res.ic_gwt_logo}">
-				<m:nav><g:Label ui:field="btnGettingStarted" text="Getting Started" addStyleNames="blue-text {style.pointer}"/></m:nav>
 				<m:nav><g:Label ui:field="btnAbout" text="About" addStyleNames="blue-text {style.pointer}"/></m:nav>
 				<m:nav><g:Label ui:field="btnButtons" text="Buttons" addStyleNames="blue-text {style.pointer}"/></m:nav>
 				<m:nav><g:Label ui:field="btnForms" text="Forms" addStyleNames="blue-text {style.pointer}"/></m:nav>
 				<m:nav><g:Label ui:field="btnDialogs" text="Dialogs" addStyleNames="blue-text {style.pointer}"/></m:nav>
 				<m:nav><g:Label ui:field="btnLoaders" text="Loaders" addStyleNames="blue-text {style.pointer}"/></m:nav>
 				<m:nav><g:Label ui:field="btnMedia" text="Media" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><m:MaterialIcon icon="mdi-action-account-circle"/> </m:nav>
+				<m:nav><g:Label ui:field="btnCards" text="Cards" addStyleNames="blue-text {style.pointer}"/></m:nav>
 			</m:MaterialNavBar>
-			<m:MaterialTopNav ui:field="topNav"  color="blue" textColor="white"/>
+			<m:MaterialTopNav ui:field="topNav"  color="blue" textColor="white">
+				<m:child>
+					<m:MaterialButton ui:field="btnGettingStarted" text="Get Started" size="large" color="blue darken-2" />
+				</m:child>
+				
+			</m:MaterialTopNav>
 			<g:HTMLPanel ui:field="contentPanel" addStyleNames="{style.panel} container z-depth-2">
 				<p:MaterialGettingStarted ui:field="materialGettingStarted"/>
 				<p:MaterialHome ui:field="materialHome"/>
@@ -44,6 +48,7 @@
 				<p:MaterialDialogs ui:field="materialDialogs"/>
 				<p:MaterialLoaders ui:field="materialLoaders"/>
 				<p:MaterialMedia ui:field="materialMedia"/>
+				<p:MaterialCard ui:field="materialCards"/>
 				<!-- <p:Team /> -->
 			</g:HTMLPanel>
 		
