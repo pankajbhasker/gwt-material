@@ -67,7 +67,7 @@ public class MaterialCard extends Composite {
 
 	public void setTitle(String title) {
 		this.title = title;
-		lblTitle.setText(title);
+		generateCard();
 	}
 
 	public String getDescription() {
@@ -103,9 +103,14 @@ public class MaterialCard extends Composite {
 
 	public void setType(String type) {
 		this.type = type;
+		generateCard();
+	}
+	
+	private void generateCard(){
 		switch (type) {
 		case "reveal":
 			cardContentPanel.clear();
+			cardRevealPanel.clear();
 			lblTitle.removeFromParent();
 			cardContentPanel.add(new HTML("<span class='card-title activator grey-text text-darken-4'>"+title+"<i class='mdi-navigation-more-vert right'></i></span>"));
 			
@@ -128,8 +133,6 @@ public class MaterialCard extends Composite {
 			break;
 		}
 	}
-	
-	
 	
 
 }
