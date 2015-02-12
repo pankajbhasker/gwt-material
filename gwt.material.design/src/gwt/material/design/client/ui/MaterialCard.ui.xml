@@ -3,33 +3,29 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
 
 	<ui:style>
-		.action a{
-			color: #FFAB40 !important;
-		}
-		.card{
-			overflow: hidden;
-		}
+	
+	.card {
+		overflow: hidden;
+	}
 	</ui:style>
 	<g:HTMLPanel>
-		<m:MaterialRow>
-			<m:MaterialColumn grid="s12 m4">
-				<g:HTMLPanel ui:field="cardPanel" addStyleNames="card {style.card}">
-				
-					<g:HTMLPanel ui:field="headerPanel" addStyleNames="card-image waves-effect waves-block waves-light">
-						<g:Image addStyleNames="activator responsive-img" ui:field="imgCard" />
-						<span class="card-title"><g:Label ui:field="lblTitle" /></span>
-					</g:HTMLPanel>
-					
-					
-					<g:HTMLPanel ui:field="cardContentPanel" addStyleNames="card-content">
-						<g:Label ui:field="lblDescription" />
-					</g:HTMLPanel>
-					
-					<g:HTMLPanel ui:field="actionPanel" addStyleNames="card-action {style.action}" />
-					 <g:HTMLPanel ui:field="cardRevealPanel" addStyleNames="card-reveal" />
-				</g:HTMLPanel>
-				
-			</m:MaterialColumn>
-		</m:MaterialRow>
+		<g:HTMLPanel ui:field="cardPanel" addStyleNames="card {style.card}">
+
+			<g:HTMLPanel ui:field="headerPanel" addStyleNames="card-image waves-effect waves-block waves-light">
+				<g:Image addStyleNames="activator responsive-img" ui:field="imgCard" />
+				<span class="card-title">
+					<g:Label ui:field="lblTitle" />
+				</span>
+			</g:HTMLPanel>
+
+
+			<g:HTMLPanel ui:field="cardContentPanel" addStyleNames="card-content">
+				<g:Label ui:field="lblDescription" />
+			</g:HTMLPanel>
+
+			<g:HTMLPanel ui:field="actionPanel" addStyleNames="card-action" />
+			<g:HTMLPanel ui:field="cardRevealPanel" addStyleNames="card-reveal" />
+		</g:HTMLPanel>
+
 	</g:HTMLPanel>
 </ui:UiBinder> 
