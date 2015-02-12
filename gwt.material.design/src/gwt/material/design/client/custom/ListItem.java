@@ -11,6 +11,11 @@ public class ListItem extends ComplexPanel {
 		setElement(DOM.createElement("LI"));
 	}
 
+	public ListItem(Widget item) {
+		setElement(DOM.createElement("LI"));
+		add(item);
+	}
+
 	public void add(Widget w) {
 		super.add(w, getElement());
 	}

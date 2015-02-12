@@ -14,6 +14,7 @@ public class MaterialModal {
 			panel.getElement().setId("modal1");
 			panel.addStyleName("modal");
 			panel.add(composite);
+			composite.addStyleName("modal-content");
 			RootPanel.get().add(panel);
 			showModal();
 		}
