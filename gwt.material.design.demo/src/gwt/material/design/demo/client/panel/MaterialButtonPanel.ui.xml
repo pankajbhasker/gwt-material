@@ -22,8 +22,6 @@
 			<m:MaterialButton text="Button" addStyleNames="{style.button}" color="blue" display="inline-block"	icon="mdi-action-account-circle" iconPosition="left"/>
 		
 			
-		
-		
 			<m:MaterialTitle  title="Floating" description="The floating circular action button is meant for very important functions."/>
 			
 			<pre>

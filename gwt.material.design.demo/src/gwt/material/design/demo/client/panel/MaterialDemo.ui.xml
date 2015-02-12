@@ -22,35 +22,48 @@
 		.pointer{
 			cursor: pointer;
 		}
-		
+		header, main, footer {
+		    padding-left: 240px;
+		}
+		.logo{
+			padding: 10px;
+			border-bottom: 1px solid #E9E9E9;
+		}
 	</ui:style>	
 	<g:HTMLPanel >
-			<m:MaterialNavBar ui:field="navBar" color="white" logoResource="{res.ic_gwt_logo}">
-				<m:nav><g:Label ui:field="btnAbout" text="About" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><g:Label ui:field="btnButtons" text="Buttons" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><g:Label ui:field="btnForms" text="Forms" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><g:Label ui:field="btnDialogs" text="Dialogs" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><g:Label ui:field="btnLoaders" text="Loaders" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><g:Label ui:field="btnMedia" text="Media" addStyleNames="blue-text {style.pointer}"/></m:nav>
-				<m:nav><g:Label ui:field="btnCards" text="Cards" addStyleNames="blue-text {style.pointer}"/></m:nav>
-			</m:MaterialNavBar>
-			<m:MaterialTopNav ui:field="topNav"  color="blue" textColor="white">
-				<m:child>
-					<m:MaterialButton ui:field="btnGettingStarted" text="Get Started" size="large" color="blue darken-2" />
-				</m:child>
-				
-			</m:MaterialTopNav>
-			<g:HTMLPanel ui:field="contentPanel" addStyleNames="{style.panel} container z-depth-2">
-				<p:MaterialGettingStarted ui:field="materialGettingStarted"/>
-				<p:MaterialHome ui:field="materialHome"/>
-				<p:MaterialButtonPanel ui:field="materialButtons"/>
-				<p:MaterialForms ui:field="materialForms"/>
-				<p:MaterialDialogs ui:field="materialDialogs"/>
-				<p:MaterialLoaders ui:field="materialLoaders"/>
-				<p:MaterialMedia ui:field="materialMedia"/>
-				<p:MaterialCard ui:field="materialCards"/>
-				<!-- <p:Team /> -->
-			</g:HTMLPanel>
+			<main>
+				<m:MaterialNavBar wave="blue" ui:field="navBar" name="myNavBar"  sideBar="fixed" color="blue"  align="right" >
+					<m:sidebaritem><m:MaterialImage resource="{res.ic_gwt_logo}" addStyleNames="{style.logo}"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnAbout" text="About" textColor="blue"  /></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnButtons" text="Buttons" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnForms" text="Forms" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnDialogs" text="Dialogs" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnLoaders" text="Loaders" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnMedia" text="Media" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnCards" text="Cards" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnNavigations" text="NavBar" textColor="blue"/></m:sidebaritem>
+				</m:MaterialNavBar>
+				<m:MaterialTopNav ui:field="topNav"  color="blue" textColor="white">
+					<m:child>
+						<m:MaterialButton ui:field="btnGettingStarted" text="Get Started" size="large" color="blue darken-2" />
+					</m:child>
+						
+				</m:MaterialTopNav>
+				<g:HTMLPanel ui:field="contentPanel" addStyleNames="{style.panel} container z-depth-2">
+					<p:MaterialGettingStarted ui:field="materialGettingStarted"/>
+					<p:MaterialHome ui:field="materialHome"/>
+					<p:MaterialStyle ui:field="materialStyle"/>
+					<p:MaterialButtonPanel ui:field="materialButtons"/>
+					<p:MaterialForms ui:field="materialForms"/>
+					<p:MaterialDialogs ui:field="materialDialogs"/>
+					<p:MaterialLoaders ui:field="materialLoaders"/>
+					<p:MaterialMedia ui:field="materialMedia"/>
+					<p:MaterialCard ui:field="materialCards"/>
+					<p:MaterialNavigations ui:field="materialNavigations"/>
+					<!-- <p:Team /> -->
+				</g:HTMLPanel>
+			</main>	
+			
 		
 	</g:HTMLPanel>
 </ui:UiBinder> 

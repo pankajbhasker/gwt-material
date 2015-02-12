@@ -12,7 +12,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MaterialDemo extends Composite {
@@ -23,8 +22,7 @@ public class MaterialDemo extends Composite {
 	}
 	
 	@UiField HTMLPanel contentPanel;
-	@UiField Label btnAbout, btnButtons, btnForms, btnDialogs, btnLoaders, btnMedia, btnCards;
-
+	
 	
 	@UiField MaterialHome materialHome;
 	@UiField MaterialButtonPanel materialButtons;
@@ -34,6 +32,8 @@ public class MaterialDemo extends Composite {
 	@UiField MaterialMedia materialMedia;
 	@UiField MaterialGettingStarted materialGettingStarted;
 	@UiField MaterialCard materialCards;
+	@UiField MaterialStyle materialStyle;
+	@UiField MaterialNavigations materialNavigations;
 	
 	@UiField MaterialNavBar navBar;
 	@UiField MaterialTopNav topNav;
@@ -49,6 +49,7 @@ public class MaterialDemo extends Composite {
 		super.onAttach();
 	}
 	
+	
 	@UiHandler("btnGettingStarted")
 	void onGettingStarted(ClickEvent e){
 		changeNav(materialGettingStarted,"Getting Started", "Learn how to easily start using GWT Material Design in your app.");
@@ -58,6 +59,7 @@ public class MaterialDemo extends Composite {
 	void onAbout(ClickEvent e){
 		changeNav(materialHome,"GWT Material Design", "Under Development");
 	}
+
 	
 	@UiHandler("btnButtons")
 	void onButtons(ClickEvent e){
@@ -86,7 +88,12 @@ public class MaterialDemo extends Composite {
 	
 	@UiHandler("btnCards")
 	void onCards(ClickEvent e){
-		changeNav(materialCards, "Cards", "Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.");
+		changeNav(materialCards, "Cards", "Cards are a convenient means of displaying content composed of different types of objects. They are also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.");
+	}
+	
+	@UiHandler("btnNavigations")
+	void onNavigations(ClickEvent e){
+		changeNav(materialNavigations, "NavBar", "The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.");
 	}
 
 	
