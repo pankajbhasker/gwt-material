@@ -20,11 +20,18 @@ public class MaterialSideNav extends Composite {
 
 	 
 	
-	  public static native void onInitMaterialDesign()/*-{
+	public static native void onInitMaterialDesign()/*-{
 		$wnd.jQuery(document).ready(function(){
 		 	 $wnd.jQuery(".button-collapse").sideNav();
-			 $wnd.jQuery('.collapsible').collapsible();
 		});
 	}-*/;
 	
+	  
+	 public static native void show()/*-{
+		$wnd.jQuery('.button-collapse').sideNav('show');
+	 }-*/;
+	 
+	 public static native void hide()/*-{
+		$wnd.jQuery('.button-collapse').sideNav('show');
+	 }-*/;
 }

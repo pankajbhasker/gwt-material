@@ -7,9 +7,10 @@ import com.google.gwt.user.client.ui.Widget;
 @SuppressWarnings("deprecation")
 public class UnorderedList extends ComplexPanel {
 	
+	private String ulId = "";
+	
 	public UnorderedList() {
 		setElement(DOM.createElement("UL"));
-		this.getElement().setId("nav-mobile");
 	}
 
 	public void add(Widget w) {
@@ -19,5 +20,16 @@ public class UnorderedList extends ComplexPanel {
 	public void insert(Widget w, int beforeIndex) {
 		super.insert(w, getElement(), beforeIndex, true);
 	}
+
+	public String getUlId() {
+		return ulId;
+	}
+
+	public void setUlId(String ulId) {
+		this.ulId = ulId;
+		this.getElement().setId(ulId);
+	}
+
+	
 
 }
