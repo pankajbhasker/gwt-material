@@ -4,6 +4,8 @@ import com.google.gwt.user.client.ui.ListBox;
 
 public class MaterialListBox extends ListBox{
 
+	private boolean old = false;
+	
 	public MaterialListBox() {
 		// TODO Auto-generated constructor stub
 	}
@@ -21,6 +23,17 @@ public class MaterialListBox extends ListBox{
 		  $wnd.jQuery('select').material_select();
 		});
 	}-*/;
+
+	public boolean isOld() {
+		return old;
+	}
+
+	public void setOld(boolean old) {
+		this.old = old;
+		if(old){
+			this.addStyleName("browser-default");
+		}
+	}
 	
 	
 }

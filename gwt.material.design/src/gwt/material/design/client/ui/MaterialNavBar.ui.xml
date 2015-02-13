@@ -15,6 +15,9 @@
 			height: auto;
 			padding: 10px;
 		}
+		.mobileNav{
+			overflow: auto !important;
+		}
 	</ui:style>
 	<g:HTMLPanel ui:field="navBar">
 		<nav>
@@ -25,7 +28,7 @@
 	        </c:CustomAnchor>
 	       
 	        <c:UnorderedList ui:field="navigation"  addStyleNames="hide-on-med-and-down"/>
-	        <c:UnorderedList ui:field="mobileNav"  addStyleNames="side-nav"/>
+	        <c:UnorderedList ui:field="mobileNav"  addStyleNames="side-nav {style.mobileNav}"/>
 	        
 	      </g:HTMLPanel>
 	    </nav>
