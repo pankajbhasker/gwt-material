@@ -7,8 +7,7 @@ import com.google.gwt.resources.client.ImageResource;
 public interface MaterialResources extends ClientBundle {
 	public static final MaterialResources INSTANCE = GWT
 			.create(MaterialResources.class);
-
-	ImageResource thermolabo_logo();
+	
 	ImageResource image();
 	MaterialCSS materialcss();
 	MaterialMobileCSS materialmobilecss();
