@@ -7,6 +7,11 @@
 	.card {
 		overflow: hidden;
 	}
+	.cardRevealContent{
+		margin-top: 10px;
+		border-top: 1px solid #E9E9E9;
+		padding-top: 10px;
+	}
 	</ui:style>
 	<g:HTMLPanel>
 		<g:HTMLPanel ui:field="cardPanel" addStyleNames="card {style.card}">
@@ -24,7 +29,9 @@
 			</g:HTMLPanel>
 
 			<g:HTMLPanel ui:field="actionPanel" addStyleNames="card-action" />
-			<g:HTMLPanel ui:field="cardRevealPanel" addStyleNames="card-reveal" />
+			<g:HTMLPanel ui:field="cardRevealPanel" addStyleNames="card-reveal" >
+				<g:HTMLPanel ui:field="cardRevealContent" addStyleNames="{style.cardRevealContent}"/>
+			</g:HTMLPanel>
 		</g:HTMLPanel>
 
 	</g:HTMLPanel>

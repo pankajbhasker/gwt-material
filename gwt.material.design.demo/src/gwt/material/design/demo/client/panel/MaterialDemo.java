@@ -34,6 +34,7 @@ public class MaterialDemo extends Composite {
 	@UiField MaterialCard materialCards;
 	@UiField MaterialStyle materialStyle;
 	@UiField MaterialNavigations materialNavigations;
+	@UiField MaterialCollapsibles materialCollapsibles;
 	
 	@UiField MaterialNavBar navBar;
 	@UiField MaterialTopNav topNav;
@@ -94,6 +95,11 @@ public class MaterialDemo extends Composite {
 	@UiHandler("btnNavigations")
 	void onNavigations(ClickEvent e){
 		changeNav(materialNavigations, "NavBar", "The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.");
+	}
+	
+	@UiHandler("btnCollapsibles")
+	void onCollapsibles(ClickEvent e){
+		changeNav(materialCollapsibles, "Collapsibles", "Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.");
 	}
 
 	

@@ -1,6 +1,7 @@
 package gwt.material.design.client.ui;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiChild;
 import com.google.gwt.uibinder.client.UiField;
@@ -23,6 +24,7 @@ public class MaterialTopNav extends Composite  {
 	private String description = "";
 	private String color="blue";
 	private String textColor="white";
+	private String padding = "";
 	
 	public MaterialTopNav() {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -67,6 +69,16 @@ public class MaterialTopNav extends Composite  {
 	public void setTextColor(String textColor) {
 		this.textColor = textColor;
 		panel.getElement().getStyle().setColor(textColor);
+	}
+
+	public String getPadding() {
+		return padding;
+	}
+
+	public void setPadding(String padding) {
+		this.padding = padding;
+		panel.getElement().getStyle().setPadding(Double.parseDouble(padding), Unit.PCT);
+		panel.getElement().getStyle().setPaddingBottom(200, Unit.PX);
 	}
 
 	

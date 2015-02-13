@@ -6,7 +6,7 @@
 			color: rgba(0, 0, 0, 0.85);
 		}
 	</ui:style>
-	<g:HTMLPanel ui:field='txtBoxWrapper' addStyleNames="input-field col s12">
+	<g:HTMLPanel ui:field='txtBoxWrapper' addStyleNames="input-field">
        	<g:HTMLPanel ui:field="iconPanel" />
        	<g:TextBox ui:field="txtBox" addStyleNames="validate {style.textBox}"/>
       	 	<label for="first_name"><g:Label ui:field="lblName"/></label>

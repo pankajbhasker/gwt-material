@@ -30,7 +30,7 @@ public class MaterialCard extends Composite {
 	Label lblTitle, lblDescription;
 	
 	@UiField 
-	HTMLPanel cardPanel, cardContentPanel, cardRevealPanel, actionPanel, headerPanel;
+	HTMLPanel cardPanel, cardContentPanel, cardRevealPanel,cardRevealContent, actionPanel, headerPanel;
 	
 	private ImageResource resource;
 	private String url = "";
@@ -100,6 +100,11 @@ public class MaterialCard extends Composite {
 		item.getElement().getStyle().setDisplay(Display.INLINE_BLOCK);
 		actionPanel.add(item);
 	} 
+	
+	@UiChild( tagname = "reveal" )
+	public void addRevealContent(Widget item){
+		cardRevealContent.add(item);
+	}
 
 	public void setType(String type) {
 		this.type = type;
@@ -117,6 +122,7 @@ public class MaterialCard extends Composite {
 			cardContentPanel.getElement().getStyle().setPaddingBottom(0, Unit.PX);
 			cardRevealPanel.add(new HTML("<span class='card-title activator grey-text text-darken-4'>"+title+"<i class='mdi-navigation-close right'></i></span>"));
 			cardRevealPanel.add(lblDescription);
+			cardRevealPanel.add(cardRevealContent);
 			break;
 		case "basic":
 			cardContentPanel.clear();
@@ -128,6 +134,8 @@ public class MaterialCard extends Composite {
 		case "image":
 			cardRevealPanel.removeFromParent();
 			cardRevealPanel.removeFromParent();
+			lblTitle.setText(title);
+			lblDescription.setText(description);
 			break;
 		default:
 			break;
