@@ -1,10 +1,10 @@
 package gwt.material.design.client.ui;
 
 import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.user.client.ui.HTMLPanel;
 
-public class MaterialRow extends HTMLPanel {
+public class MaterialRow extends MaterialPanel {
 
+	
 	public MaterialRow() {
 		super("");
 	}

@@ -5,6 +5,9 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 
 public class MaterialPanel extends HTMLPanel{
 
+	private String color = "";
+	private String align = "";
+	
 	public MaterialPanel(SafeHtml safeHtml) {
 		super(safeHtml);
 		// TODO Auto-generated constructor stub
@@ -18,6 +21,24 @@ public class MaterialPanel extends HTMLPanel{
 	public MaterialPanel(String html) {
 		super(html);
 		// TODO Auto-generated constructor stub
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+		this.addStyleName(color);
+	}
+
+	public String getAlign() {
+		return align;
+	}
+
+	public void setAlign(String align) {
+		this.align = align;
+		this.addStyleName(align);
 	}
 
 	

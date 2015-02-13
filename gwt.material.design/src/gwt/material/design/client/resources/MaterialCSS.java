@@ -4,10 +4,12 @@ import com.google.gwt.resources.client.CssResource;
 
 public interface MaterialCSS extends CssResource {
 	String showPanel();
+	String fullBackground();
 	
 	//ADNIMATIONS
 	String materialScale();
 	String materialScaleInitial();
 	String pull();
 	String pullInitial();
+
 }
