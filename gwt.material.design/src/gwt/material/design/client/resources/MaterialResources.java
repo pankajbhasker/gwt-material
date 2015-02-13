@@ -10,10 +10,6 @@ public interface MaterialResources extends ClientBundle {
 
 	ImageResource thermolabo_logo();
 	ImageResource image();
-	ImageResource ic_glen();
-	ImageResource ic_jeremy();
-	ImageResource ic_karl();
-	ImageResource ic_kevin();
 	MaterialCSS materialcss();
 	MaterialMobileCSS materialmobilecss();
 

@@ -111,5 +111,16 @@ public class MaterialTextBox extends Composite {
 	public void setValid(boolean isValid) {
 		this.isValid = isValid;
 	}
+	
+	public void setDisabled(boolean disabled){
+		
+		if(disabled){
+			txtBox.setEnabled(disabled);
+		} else {
+			txtBox.setEnabled(!disabled);
+		}
+		
+			
+	}
 
 }
