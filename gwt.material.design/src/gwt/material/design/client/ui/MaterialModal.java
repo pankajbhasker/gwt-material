@@ -21,6 +21,14 @@ public class MaterialModal {
 		
 	}
 	
+	public void show(){
+		showModal();
+	}
+	
+	public void hide(){
+		closeModal();
+	}
+	
 	public static native void showModal()/*-{
 		$wnd.jQuery('#modal1').openModal();
 	}-*/;

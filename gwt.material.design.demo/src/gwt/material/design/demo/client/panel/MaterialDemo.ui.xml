@@ -42,6 +42,7 @@
 					<m:sidebaritem><m:MaterialLink ui:field="btnMedia" text="Media" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnCards" text="Cards" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnNavigations" text="NavBar" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnCollapsibles" text="Collapsible" textColor="blue"/></m:sidebaritem>
 				</m:MaterialNavBar>
 				<m:MaterialTopNav ui:field="topNav"  color="blue" textColor="white">
 					<m:child>
@@ -60,6 +61,7 @@
 					<p:MaterialMedia ui:field="materialMedia"/>
 					<p:MaterialCard ui:field="materialCards"/>
 					<p:MaterialNavigations ui:field="materialNavigations"/>
+					<p:MaterialCollapsibles ui:field="materialCollapsibles"/>
 					<!-- <p:Team /> -->
 				</g:HTMLPanel>
 			</main>	

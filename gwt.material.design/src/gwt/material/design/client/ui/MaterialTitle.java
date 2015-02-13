@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -20,11 +21,25 @@ public class MaterialTitle extends Composite {
 	private String color="";
 	private MaterialTitle materialTitle;
 	
+	@UiField HTMLPanel titlePanel;
 	@UiField Label lblTitle, lblDescription;
 	
 	public MaterialTitle() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
+
+	
+	
+	@Override
+	protected void onAttach() {
+		// TODO Auto-generated method stub
+		super.onAttach();
+		if(title.isEmpty()){
+			titlePanel.removeFromParent();
+		}
+	}
+
+
 
 	public String getDescription() {
 		return description;
@@ -43,7 +58,7 @@ public class MaterialTitle extends Composite {
 		this.title = title;
 		lblTitle.setText(title);
 	}
-
+	
 	public String getColor() {
 		return color;
 	}
