@@ -5,16 +5,15 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-public class MaterialButtonPanel extends Composite {
+public class MaterialTabsPanel extends Composite {
 
-	private static MaterialButtonPanelUiBinder uiBinder = GWT.create(MaterialButtonPanelUiBinder.class);
+	private static MaterialTabsPanelUiBinder uiBinder = GWT.create(MaterialTabsPanelUiBinder.class);
 
-	interface MaterialButtonPanelUiBinder extends UiBinder<Widget, MaterialButtonPanel> {
+	interface MaterialTabsPanelUiBinder extends UiBinder<Widget, MaterialTabsPanel> {
 	}
-	
-	public MaterialButtonPanel() {
+
+	public MaterialTabsPanel() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
-
 
 }

@@ -1,11 +1,12 @@
 package gwt.material.design.client.ui;
 
+import gwt.material.design.client.custom.CustomIcon;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
@@ -19,7 +20,6 @@ public class MaterialTextBox extends Composite {
 
 	private String placeholder;
 	private String type = "text";
-	private String size = "s12";
 	private String icon = "";
 	private boolean isValid = true;
 
@@ -28,7 +28,7 @@ public class MaterialTextBox extends Composite {
 	@UiField
 	TextBox txtBox;
 	@UiField
-	HTMLPanel iconPanel, txtBoxWrapper;
+	CustomIcon iconPanel;
 
 	public MaterialTextBox() {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -84,19 +84,8 @@ public class MaterialTextBox extends Composite {
 		txtBox.getElement().setAttribute("type", type);
 	}
 
-
 	public String getIcon() {
 		return icon;
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
-		txtBoxWrapper.getElement().removeClassName("s12");
-		txtBoxWrapper.getElement().addClassName(size);
 	}
 
 	public void setIcon(String icon) {

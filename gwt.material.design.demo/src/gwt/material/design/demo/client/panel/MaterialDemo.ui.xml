@@ -32,7 +32,7 @@
 	</ui:style>	
 	<g:HTMLPanel >
 			<main>
-				<m:MaterialNavBar wave="blue" ui:field="navBar" name="myNavBar"  sideBar="fixed" color="blue"  align="right" >
+				<m:MaterialNavBar wave="blue" ui:field="navBar" name="myNavBar"  sideBar="fixed" color="blue darken-4"  align="right" >
 					<m:sidebaritem><m:MaterialImage resource="{res.ic_gwt_logo}" addStyleNames="{style.logo}"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnAbout" text="About" textColor="blue"  /></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnButtons" text="Buttons" textColor="blue"/></m:sidebaritem>
@@ -44,7 +44,7 @@
 					<m:sidebaritem><m:MaterialLink ui:field="btnNavigations" text="NavBar" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnCollapsibles" text="Collapsible" textColor="blue"/></m:sidebaritem>
 				</m:MaterialNavBar>
-				<m:MaterialTopNav ui:field="topNav"  color="blue" textColor="white">
+				<m:MaterialTopNav resource="{res.bg_top_nav}" ui:field="topNav"  color="blue" textColor="white">
 					<m:child>
 						<m:MaterialButton ui:field="btnGettingStarted" text="Get Started" size="large" color="blue darken-2" />
 					</m:child>

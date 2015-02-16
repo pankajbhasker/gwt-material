@@ -13,4 +13,5 @@ public interface MaterialResources extends ClientBundle {
 	ImageResource ic_metaphor();
 	ImageResource ic_motion();
 	ImageResource ic_getting_started();
+	ImageResource bg_top_nav();
 }

@@ -1,96 +1,103 @@
 package gwt.material.design.client.ui;
 
-import com.google.gwt.user.client.ui.FocusPanel;
+import gwt.material.design.client.custom.CustomAnchor;
+import gwt.material.design.client.custom.CustomButton;
+import gwt.material.design.client.custom.CustomIcon;
+import gwt.material.design.client.custom.MaterialWidget;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.HasClickHandlers;
+import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.ComplexPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Widget;
 
-public class MaterialButton extends FocusPanel {
+public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 
-	private HTMLPanel panel;
+	private static MaterialButtonUiBinder uiBinder = GWT.create(MaterialButtonUiBinder.class);
 
+	interface MaterialButtonUiBinder extends UiBinder<Widget, MaterialButton> {
+	}
+	
+	@UiField HTMLPanel panel;
+	@UiField CustomButton button;
+	@UiField CustomAnchor anchor;
+	@UiField CustomIcon iconElem;
+	@UiField Label label;
+	
 	private String text = "";
 	private String type = "";
-	private String color = "";
 	private String icon = "";
-	private String iconPosition = "right";
+	private String iconPosition = "";
 	private String size = "";
-	private String display = "";
-	private String textColor = "";
 	private String width = "";
-
-	private void generateButton() {
-		this.clear();
-		panel = new HTMLPanel(generateHTML());
-		this.add(panel);
-	}
-
-	private String generateHTML() {
-
-		String html = "";
-		if (type.equals("flat")) {
-			html += "<a  type='submit' name='action' class='waves-effect gwtMaterialDesign " + textColor + "-text !important";
-			if (color != "") {
-				html += "waves-" + color;
-			}
-		}
-		else if (type.equals("floating")) {
-			html += "<button type='submit'  name='action' class='btn btn-large waves-effect waves-light gwtMaterialDesign ";
-			if (color != "") {
-				html += color;
-			}
-		}
-		else {
-			html += "<button type='submit' style=' width: " + width +" !important;' name='action' class='btn waves-effect waves-light gwtMaterialDesign ";
-			if (color != "") {
-				html += color;
-			}
-		}
-
-		if (type != "") {
-			html += " btn-" + type;
-		}
-
-		if (size != "") {
-			html += " btn-" + size;
-		}
-
-		html += "'"; // ending for the class attribute
-
-		if (textColor != "") {
-			html += textColor;
-		}
-
-		html += "'"; // end of style
-
-		html += ">"; // ending for the button tag
-
-		if (icon != "") {
-			html += "<i class='" + icon + " " + iconPosition + "'></i>";
-		}
-
-		html += text;
-		if (type.equals("flat")) {
-			html += "</a>";
-		}
-		else {
-			html += "</button>";
-			;
-		}
-
-		return html;
-	}
+	private boolean disable;
 
 	public MaterialButton() {
-
+		initWidget(uiBinder.createAndBindUi(this));
 	}
+	
 
-	public String getIcon() {
-		return icon;
-	}
-
-	public void setIcon(String icon) {
+	public MaterialButton(String text, String type, String icon, String iconPosition, String size) {
+		initWidget(uiBinder.createAndBindUi(this));
+		this.text = text;
+		this.type = type;
 		this.icon = icon;
-		generateButton();
+		this.iconPosition = iconPosition;
+		this.size = size;
+	}
 
+	@Override
+	protected void onAttach() {
+		super.onAttach();
+		switch (type) {
+		case "flat":
+			changeType(anchor);
+			break;
+		default:
+			changeType(button);
+			button.addStyleName("btn");
+			break;
+		}
+		super.applyMaterialEffect();
+	}
+
+	private void changeType(ComplexPanel w){
+		super.setWidget(w);
+	
+		panel.clear();
+		w.add(iconElem);
+		w.removeFromParent();
+		
+		if(isDisable()){
+			waves = "";
+			color = "";
+			w.addStyleName("disabled");
+		}
+		
+		if(!type.isEmpty()) w.addStyleName("btn-" + type);
+		
+		
+		if(!text.isEmpty()){
+			label.setText(text);
+			w.add(label);
+		}else label.removeFromParent();
+		
+		if(!icon.isEmpty()) iconElem.addStyleName(icon);
+		else iconElem.removeFromParent();
+		
+		if(!iconPosition.isEmpty()) iconElem.addStyleName(iconPosition);
+		
+		if(!size.isEmpty()) button.addStyleName("btn-" + size);
+		
+		if(!width.isEmpty()) w.getElement().setAttribute("style", "width: " + width+ ";");
+		
+		panel.add(w);
 	}
 
 	public String getText() {
@@ -99,7 +106,6 @@ public class MaterialButton extends FocusPanel {
 
 	public void setText(String text) {
 		this.text = text;
-		generateButton();
 	}
 
 	public String getType() {
@@ -108,17 +114,15 @@ public class MaterialButton extends FocusPanel {
 
 	public void setType(String type) {
 		this.type = type;
-		generateButton();
+		
 	}
 
-	public String getColor() {
-		return color;
+	public String getIcon() {
+		return icon;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
-		generateButton();
-
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 	public String getIconPosition() {
@@ -127,7 +131,7 @@ public class MaterialButton extends FocusPanel {
 
 	public void setIconPosition(String iconPosition) {
 		this.iconPosition = iconPosition;
-		generateButton();
+		
 	}
 
 	public String getSize() {
@@ -136,34 +140,31 @@ public class MaterialButton extends FocusPanel {
 
 	public void setSize(String size) {
 		this.size = size;
-		generateButton();
 	}
 
-	public String getDisplay() {
-		return display;
+	@Override
+	public HandlerRegistration addClickHandler(ClickHandler handler) {
+		return addDomHandler(handler, ClickEvent.getType());
 	}
 
-	public void setDisplay(String display) {
-		this.display = display;
-		this.getElement().setAttribute("style", "display: " + display + ";");
-		generateButton();
+	public boolean isDisable() {
+		return disable;
 	}
 
-	public String getTextColor() {
-		return textColor;
+	public void setDisable(boolean disable) {
+		this.disable = disable;
 	}
 
-	public void setTextColor(String textColor) {
-		this.textColor = textColor;
-		generateButton();
-	}
 
 	public String getWidth() {
 		return width;
 	}
 
+
 	public void setWidth(String width) {
 		this.width = width;
-		generateButton();
 	}
+
+	
+	
 }
