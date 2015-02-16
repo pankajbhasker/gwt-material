@@ -7,21 +7,8 @@
 	
 	</ui:style>
 	<g:HTMLPanel>
-
-		<c:CustomAnchor class='dropdown-button btn' data-activates='dropdown1'>Drop Me!</c:CustomAnchor>
-
-		<ul id='dropdown1' class='dropdown-content'>
-			<li>
-				<a href="#!">one</a>
-			</li>
-			<li>
-				<a href="#!">two</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="#!">three</a>
-			</li>
-		</ul>
+		<m:MaterialButton ui:field="anchor" addStyleNames='dropdown-button' icon="mdi-navigation-arrow-drop-down" iconPosition="right"/>
+		<c:UnorderedList ui:field="list" addStyleNames='dropdown-content' />
 
 	</g:HTMLPanel>
 </ui:UiBinder> 
