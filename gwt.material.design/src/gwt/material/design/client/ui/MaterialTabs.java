@@ -1,11 +1,12 @@
 package gwt.material.design.client.ui;
 
+import gwt.material.design.client.custom.MaterialWidget;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-public class MaterialTabs extends Composite  {
+public class MaterialTabs extends MaterialWidget  {
 
 	private static MaterialTabsUiBinder uiBinder = GWT.create(MaterialTabsUiBinder.class);
 
@@ -27,7 +28,7 @@ public class MaterialTabs extends Composite  {
 
 	public static native void initTabs()/*-{
 		$wnd.jQuery(document).ready(function(){
-	    	$wnd.jQuery('ul.tabs').tabs('select_tab', 'tab_id');
+	    	$wnd.jQuery('ul.tabs').tabs();
 	  	});
 	}-*/;
 	

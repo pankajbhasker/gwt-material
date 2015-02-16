@@ -12,11 +12,12 @@
 		
 		<pre>
 <span class="tag">&lt;m:MaterialTextBox</span> <span class="attr">placeholder</span>="First Name" <span class="tag">/></span>
-<span class="tag">&lt;m:MaterialTextBox</span> <span class="attr">placeholder</span>="Email" <span class="attr">icon</span>="mdi-action-account-circle prefix" <span class="tag">/></span>
+<span class="tag">&lt;m:MaterialTextBox</span> <span class="attr">placeholder</span>="Email" <span class="attr">icon</span>="mdi-action-account-circle" <span class="tag">/></span>
 		</pre>
 		
 		<m:MaterialTitle title="Textarea" description="Textareas allow larger expandable user input. The border should light up simply and clearly indicating which field the user is currently editing. "/>
 		<m:MaterialTextArea placeholder="Content" />
+		<m:MaterialTextArea placeholder="About" icon="mdi-action-face-unlock"/>
 		
 		<pre>
 <span class="tag">&lt;m:MaterialTextArea</span> <span class="attr">placeholder</span>="Content" <span class="tag">/></span>
@@ -58,7 +59,7 @@
 		</pre>
 		
 		<m:MaterialTitle title="Switches" />
-		<m:MaterialSwitch />
+		<m:MaterialSwitch ui:field="mySwitch"/>
 		
 		<pre>
 <span class="tag">&lt;m:MaterialSwitch </span> <span class="tag">/></span>
