@@ -95,7 +95,11 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 		
 		if(!size.isEmpty()) button.addStyleName("btn-" + size);
 		
-		if(!width.isEmpty()) w.getElement().setAttribute("style", "width: " + width+ ";");
+		if(!width.isEmpty()) {
+			this.getElement().setAttribute("style", "width: " + width+ ";");
+			w.getElement().setAttribute("style", "width: " + width+ ";");
+		}
+		
 		
 		panel.add(w);
 	}
@@ -163,6 +167,16 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 
 	public void setWidth(String width) {
 		this.width = width;
+	}
+
+
+	public CustomButton getButton() {
+		return button;
+	}
+
+
+	public void setButton(CustomButton button) {
+		this.button = button;
 	}
 
 	

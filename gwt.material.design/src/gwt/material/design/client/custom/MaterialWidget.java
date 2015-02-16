@@ -10,6 +10,7 @@ public class MaterialWidget extends Composite{
 	protected String textColor = "";
 	protected String type = "";
 	protected Widget widget;
+	protected String align = "";
 
 	
 	public String getWaves() {
@@ -51,7 +52,8 @@ public class MaterialWidget extends Composite{
 		if(widget!=null){
 			if(!waves.isEmpty()) widget.getElement().addClassName("waves-effect waves-" + waves);
 			if(!color.isEmpty()) widget.getElement().addClassName(color);
-			if(!textColor.isEmpty()) widget.getElement().addClassName(textColor);
+			if(!textColor.isEmpty()) widget.getElement().addClassName(textColor + "-text");
+			if(!align.isEmpty()) widget.getElement().addClassName(align + "-align");
 		}
 	}
 
@@ -63,4 +65,13 @@ public class MaterialWidget extends Composite{
 		this.widget = widget;
 	}
 
+	public String getAlign() {
+		return align;
+	}
+
+	public void setAlign(String align) {
+		this.align = align;
+	}
+
+	
 }
