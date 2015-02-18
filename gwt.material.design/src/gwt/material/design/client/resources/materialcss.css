@@ -22,6 +22,24 @@ background-position: top right;
 background-repeat: no-repeat;
 }
 
+.floatingButtonsItem ul li div{
+	transform: scale(0.4) translateY(40px);
+	-moz-transform: scale(0.4) translateY(40px);
+	-webkit-transform: scale(0.4) translateY(40px); 
+	opacity: 0;
+	transition: 400ms all;
+	-webkit-transition: 400ms all;
+	-moz-transition: 400ms all;
+	margin-bottom: -10px;
+}
+
+.floatingButtonsItem:hover ul li div{
+	transform: scale(1) translateY(0px);
+	-moz-transform: scale(1) translateY(0px);
+	-webkit-transform: scale(1) translateY(0px);
+	opacity: 1;
+}
+
 
 * {
 	outline: 0;
