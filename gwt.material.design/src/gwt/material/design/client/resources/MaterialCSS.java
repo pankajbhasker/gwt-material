@@ -12,4 +12,6 @@ public interface MaterialCSS extends CssResource {
 	String pull();
 	String pullInitial();
 
+	//FLOATING BUTTONS ANIMATIONS
+	String floatingButtonsItem();
 }

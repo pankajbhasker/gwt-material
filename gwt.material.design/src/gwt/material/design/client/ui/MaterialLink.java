@@ -14,6 +14,7 @@ public class MaterialLink extends FocusPanel {
 	private String textColor = "";
 	protected String fontSize = "";
 	private String wave = "";
+	private Object object;
 
 	public MaterialLink() {
 		// TODO Auto-generated constructor stub
@@ -28,6 +29,11 @@ public class MaterialLink extends FocusPanel {
 	}
 
 
+
+	public MaterialLink(String text) {
+		super();
+		this.text = text;
+	}
 
 	public String getTextColor() {
 		return textColor;
@@ -55,7 +61,6 @@ public class MaterialLink extends FocusPanel {
 		this.text = text;
 		generateLink();
 	}
-	
 
 	public String getFontSize() {
 		return fontSize;
@@ -65,7 +70,7 @@ public class MaterialLink extends FocusPanel {
 		this.fontSize = fontSize;
 		this.getElement().getStyle().setFontSize(Double.valueOf(fontSize), Unit.EM);
 	}
-	
+
 	public String getIconPosition() {
 		return iconPosition;
 	}
@@ -78,10 +83,10 @@ public class MaterialLink extends FocusPanel {
 	public void generateLink() {
 		this.clear();
 		String iconMarkup = "";
-		if(!icon.isEmpty()){
-			iconMarkup = "<i class='" + icon + " "+iconPosition+"'></i>";
+		if (!icon.isEmpty()) {
+			iconMarkup = "<i class='" + icon + " " + iconPosition + "'></i>";
 		}
-		panel = new HTMLPanel("<a class='" + textColor + "-text'>"+iconMarkup+" " + text + "</a>");
+		panel = new HTMLPanel("<a class='" + textColor + "-text'>" + iconMarkup + " " + text + "</a>");
 		panel.getElement().getStyle().setCursor(Cursor.POINTER);
 		this.add(panel);
 	}
@@ -92,11 +97,17 @@ public class MaterialLink extends FocusPanel {
 
 	public void setWave(String wave) {
 		this.wave = wave;
-		if(!wave.isEmpty()){
+		if (!wave.isEmpty()) {
 			this.addStyleName("waves-effect waves-" + wave);
 		}
 	}
 
-	
-	
+	public Object getObject() {
+		return object;
+	}
+
+	public void setObject(Object object) {
+		this.object = object;
+	}
+
 }

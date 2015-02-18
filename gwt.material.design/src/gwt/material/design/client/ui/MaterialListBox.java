@@ -5,6 +5,7 @@ import com.google.gwt.user.client.ui.ListBox;
 public class MaterialListBox extends ListBox{
 
 	private boolean old = false;
+	private String textColor = "";
 	
 	public MaterialListBox() {
 		// TODO Auto-generated constructor stub
@@ -33,6 +34,15 @@ public class MaterialListBox extends ListBox{
 		if(old){
 			this.addStyleName("browser-default");
 		}
+	}
+
+	public String getTextColor() {
+		return textColor;
+	}
+
+	public void setTextColor(String textColor) {
+		this.textColor = textColor;
+		this.getElement().addClassName(textColor);
 	}
 	
 	
