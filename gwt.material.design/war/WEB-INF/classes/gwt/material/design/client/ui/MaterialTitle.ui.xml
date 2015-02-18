@@ -11,7 +11,10 @@
 		}
 	</ui:style>
 	<g:HTMLPanel>
-		<h4><g:Label ui:field="lblTitle" addStyleNames="{style.title}"/></h4>
+		<g:HTMLPanel ui:field="titlePanel">
+			<h4><g:Label ui:field="lblTitle" addStyleNames="{style.title}"/></h4>
+		</g:HTMLPanel>
+		
 		<p><g:Label ui:field="lblDescription" addStyleNames="{style.desc}"/></p>
 	</g:HTMLPanel>
 </ui:UiBinder> 
