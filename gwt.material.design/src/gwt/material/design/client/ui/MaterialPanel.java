@@ -8,6 +8,7 @@ public class MaterialPanel extends HTMLPanel{
 	private String color = "";
 	private String align = "";
 	private String textColor = "";
+	private String shadow = "";
 	
 	public MaterialPanel(SafeHtml safeHtml) {
 		super(safeHtml);
@@ -49,6 +50,15 @@ public class MaterialPanel extends HTMLPanel{
 	public void setTextColor(String textColor) {
 		this.textColor = textColor;
 		this.addStyleName(textColor + "-text");
+	}
+
+	public String getShadow() {
+		return shadow;
+	}
+
+	public void setShadow(String shadow) {
+		this.shadow = shadow;
+		this.addStyleName("z-depth-" + shadow);
 	}
 
 	
