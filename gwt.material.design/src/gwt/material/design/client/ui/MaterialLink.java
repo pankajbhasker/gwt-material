@@ -18,6 +18,16 @@ public class MaterialLink extends FocusPanel {
 	public MaterialLink() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public MaterialLink(String text, String textColor) {
+		super();
+		this.text = text;
+		this.textColor = textColor;
+	}
+
+
 
 	public String getTextColor() {
 		return textColor;

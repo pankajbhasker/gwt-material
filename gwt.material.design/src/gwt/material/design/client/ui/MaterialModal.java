@@ -8,6 +8,8 @@ public class MaterialModal {
 	
 	private static HTMLPanel panel = new HTMLPanel("");
 	
+	private boolean fixedFooter;
+	
 	public static void showModal(boolean isShow,Widget composite){
 		if(isShow){
 			panel.clear();
@@ -36,5 +38,17 @@ public class MaterialModal {
 	public static native void closeModal()/*-{
 		$wnd.jQuery('#modal1').closeModal();
 	}-*/;
+
+	public boolean isFixedFooter() {
+		return fixedFooter;
+	}
+
+	public void setFixedFooter(boolean fixedFooter) {
+		this.fixedFooter = fixedFooter;
+		if(fixedFooter){
+			panel.addStyleName("modal-fixed-footer");
+		}
+	}
+	
 	
 }
