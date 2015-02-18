@@ -16,7 +16,8 @@
   <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
   <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
-
+  <inherits name="org.moxieapps.gwt.uploader.Uploader"/>
+  <inherits name='com.google.gwt.widgetideas.WidgetIdeas' />
   <!-- Other module inherits                                      -->
 
   <!-- Specify the app entry point class.                         -->
@@ -27,5 +28,5 @@
   <source path='shared'/>
 
   <!-- allow Super Dev Mode -->
-  <add-linker name="xsiframe"/>
+  <set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 </module>

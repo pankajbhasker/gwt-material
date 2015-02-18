@@ -14,4 +14,7 @@ public interface MaterialCSS extends CssResource {
 
 	//FLOATING BUTTONS ANIMATIONS
 	String floatingButtonsItem();
+	
+	//CUSTOM LOADING
+	String progress();
 }

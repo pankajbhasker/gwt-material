@@ -9,6 +9,7 @@ public interface MaterialResources extends ClientBundle {
 			.create(MaterialResources.class);
 	
 	ImageResource image();
+	ImageResource ic_progress_cancel();
 	MaterialCSS materialcss();
 	MaterialMobileCSS materialmobilecss();
 
