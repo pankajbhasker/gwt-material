@@ -9,8 +9,8 @@
 	
 	</ui:style>
 	<m:MaterialRow>
-		<m:MaterialColumn grid="s12 m6 l4">
-			<m:MaterialTitle title="Accordion" />
+		<m:MaterialColumn grid="s12 m6 l8">
+			<m:MaterialTitle title="Accordion" description="You can set the accordion type by adding an attribute type='accordion'"/>
 			<m:MaterialCollapsible>
 			
 				<m:item>
@@ -47,7 +47,8 @@
 				</m:item>
 				
 			</m:MaterialCollapsible>
-			<m:MaterialTitle title="Expandable" />
+			
+			<m:MaterialTitle title="Expandable" description="You can set the accordion type by adding an attribute type='expandable'"/>
 			<m:MaterialCollapsible type="expandable" wave="light">
 			
 				<m:item>
@@ -85,6 +86,21 @@
 				
 			</m:MaterialCollapsible>
 			
+		</m:MaterialColumn>
+		
+		<m:MaterialColumn grid="s12 m12 l12">
+		<pre>
+<span class="tag">&lt;m:MaterialCollapsible</span> <span class="attr">type</span>="accordion"<span class="tag">></span>
+	<span class="tag">&lt;m:item></span>
+		<span class="tag">&lt;m:MaterialCollapsibleItem></span>
+			<span class="tag">&lt;m:header>&lt;m:MaterialLink</span> <span class="attr">text</span>="Paragraph" <span class="attr">icon</span>="mdi-editor-attach-file" <span class="attr">textColor</span>="black"<span class="tag">/>&lt;/m:header></span>
+			<span class="tag">&lt;m:content>&lt;m:MaterialTitle</span> <span class="attr">description</span>="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."<span class="tag">/>&lt;/m:content></span>
+		<span class="tag">&lt;/m:MaterialCollapsibleItem></span>
+	<span class="tag">&lt;/m:item></span>
+	<span class="comment">&lt;!--  Other Collapsible Items to be declared here --></span>
+<span class="tag">&lt;/m:MaterialCollapsible></span>
+	
+		</pre>
 		</m:MaterialColumn>
 		
 	</m:MaterialRow>
