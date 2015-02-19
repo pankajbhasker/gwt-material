@@ -43,6 +43,7 @@
 					<m:sidebaritem><m:MaterialLink ui:field="btnCards" text="Cards" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnNavigations" text="NavBar" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnCollapsibles" text="Collapsible" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnMaterialDropDowns" text="Dropdown" textColor="blue"/></m:sidebaritem>
 				</m:MaterialNavBar>
 				<m:MaterialTopNav resource="{res.bg_top_nav}" ui:field="topNav"  color="blue" textColor="white">
 					<m:child>
@@ -62,6 +63,7 @@
 					<p:MaterialCard ui:field="materialCards"/>
 					<p:MaterialNavigations ui:field="materialNavigations"/>
 					<p:MaterialCollapsibles ui:field="materialCollapsibles"/>
+					<p:MaterialDropDowns ui:field="materialDropDowns"/>
 					<!-- <p:Team /> -->
 				</g:HTMLPanel>
 			</main>	

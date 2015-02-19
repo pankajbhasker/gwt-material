@@ -3,7 +3,6 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:gwt.material.design.client.ui">
 	<ui:style>
-	
 		
 	</ui:style>
 	<g:HTMLPanel ui:field="panel">
@@ -53,12 +52,30 @@
 		<m:MaterialButton type="floating"  icon="mdi-action-account-circle" disable="true"/>
 		
 		<pre>
-<span class="tag">&lt;m:MaterialButton</span> <span class="attr">text</span>="Button" <span class="attr">icon</span>="mdi-action-account-circle" <span class="attr">iconPosition</span>="left" <span class="attr">size</span>="large" <span class="attr">disable</span>="true"/>
+<span class="tag">&lt;m:MaterialButton</span> <span class="attr">text</span>="Button" <span class="attr">icon</span>="mdi-action-account-circle" <span class="attr">iconPosition</span>="left" <span class="attr">size</span>="large" <span class="attr">disable</span>="true"<span class="tag">/></span>
 <span class="tag">&lt;m:MaterialButton</span> <span class="attr">text</span>="Button" <span class="attr">icon</span>="mdi-action-account-circle" <span class="attr">iconPosition</span>="left" <span class="attr">disable</span>="true"/>
 <span class="tag">&lt;m:MaterialButton</span> <span class="attr">text</span>="Button" <span class="attr">type</span>="flat" <span class="attr">disable</span>="true"/>
 <span class="tag">&lt;m:MaterialButton</span> <span class="attr">type</span>="floating"  <span class="attr">icon</span>="mdi-action-account-circle" <span class="attr">disable</span>="true"/>
 		</pre>
 		
+		<m:MaterialTitle title="Fixed Action Button" description="If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page."/>
+		<m:MaterialFloatingContainer>
+			<m:initial><m:MaterialButton type="floating" waves="light" size="large" color="blue"  icon="mdi-action-account-circle"/></m:initial>
+			<m:item><m:MaterialButton type="floating" waves="light" color="green"  icon="mdi-action-account-circle"/></m:item>
+			<m:item><m:MaterialButton type="floating" waves="light" color="red"  icon="mdi-action-account-circle"/></m:item>
+			<m:item><m:MaterialButton type="floating" waves="light" color="orange"  icon="mdi-action-account-circle"/></m:item>
+			<m:item><m:MaterialButton type="floating" waves="light" color="blue"  icon="mdi-action-account-circle"/></m:item>
+		</m:MaterialFloatingContainer>
+		
+		<pre>
+<span class="tag">&lt;m:MaterialFloatingContainer></span>
+	<span class="tag">&lt;m:initial>&lt;m:MaterialButton</span> <span class="attr">type</span>="floating" <span class="attr">waves</span>="light" <span class="attr">size</span>="large" <span class="attr">color</span>="blue"  <span class="attr">icon</span>="mdi-action-account-circle"<span class="attr">/>&lt;/m:initial></span>
+	<span class="tag">&lt;m:item>&lt;m:MaterialButton</span> <span class="attr">type</span>="floating" <span class="attr">waves</span>="light" <span class="attr">color</span>="green"  <span class="attr">icon</span>="mdi-action-account-circle"<span class="attr">/>&lt;/m:item></span>
+	<span class="tag">&lt;m:item>&lt;m:MaterialButton</span> <span class="attr">type</span>="floating" <span class="attr">waves</span>="light" <span class="attr">color</span>="red"  <span class="attr">icon</span>="mdi-action-account-circle"<span class="attr">/>&lt;/m:item></span>
+	<span class="tag">&lt;m:item>&lt;m:MaterialButton</span> <span class="attr">type</span>="floating" <span class="attr">waves</span>="light" <span class="attr">color</span>="orange"  <span class="attr">icon</span>="mdi-action-account-circle"<span class="attr">/>&lt;/m:item></span>
+	<span class="tag">&lt;m:item>&lt;m:MaterialButton</span> <span class="attr">type</span>="floating" <span class="attr">waves</span>="light" <span class="attr">color</span>="blue"  <span class="attr">icon</span>="mdi-action-account-circle"<span class="attr">/>&lt;/m:item></span>
+<span class="tag">&lt;/m:MaterialFloatingContainer></span>
+		</pre>
 	
 	</g:HTMLPanel>
 </ui:UiBinder> 

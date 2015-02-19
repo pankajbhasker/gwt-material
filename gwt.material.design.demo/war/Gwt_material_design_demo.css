@@ -13,6 +13,9 @@ pre{
 .attr{
 	color: #690;
 }
+.comment{
+	color: #999;
+}
 
 /** Example rules used by the template application (remove for your app) */
 h1 {

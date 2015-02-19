@@ -35,6 +35,7 @@ public class MaterialDemo extends Composite {
 	@UiField MaterialStyle materialStyle;
 	@UiField MaterialNavigations materialNavigations;
 	@UiField MaterialCollapsibles materialCollapsibles;
+	@UiField MaterialDropDowns materialDropDowns;
 	
 	@UiField MaterialNavBar navBar;
 	@UiField MaterialTopNav topNav;
@@ -102,6 +103,10 @@ public class MaterialDemo extends Composite {
 		changeNav(materialCollapsibles, "Collapsibles", "Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.");
 	}
 
+	@UiHandler("btnMaterialDropDowns")
+	void onDropdown(ClickEvent e){
+		changeNav(materialDropDowns, "Dropdown", "You can add dropdown easily by specifying it's item content and add a UiHandler on it to implement any event.");
+	}
 	
 	private void changeNav(Composite content, String title, String description){
 		MaterialAnimator.animate(Transition.PULL, contentPanel, 500);
