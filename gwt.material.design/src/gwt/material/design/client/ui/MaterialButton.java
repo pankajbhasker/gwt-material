@@ -36,6 +36,7 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 	private String iconPosition = "";
 	private String size = "";
 	private String width = "";
+	
 	private boolean disable;
 
 	public MaterialButton() {

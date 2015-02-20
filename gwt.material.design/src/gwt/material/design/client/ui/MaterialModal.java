@@ -15,19 +15,35 @@ public class MaterialModal {
 			panel.clear();
 			panel.getElement().setId("modal1");
 			panel.addStyleName("modal");
-			panel.add(composite);
-			composite.addStyleName("modal-content");
+			panel.add(composite);	
 			RootPanel.get().add(panel);
-			showModal();
+			panel.removeStyleName("modal-fixed-footer");
 		}
-		
+		showModal();
 	}
 	
+	public static void showModal(boolean isShow,Widget composite, boolean isFixedFooter){
+		if(isShow){
+			panel.clear();
+			panel.getElement().setId("modal1");
+			panel.addStyleName("modal");
+			panel.add(composite);	
+			RootPanel.get().add(panel);
+			
+		}
+		if(isFixedFooter){
+			panel.addStyleName("modal-fixed-footer");
+		}
+		showModal();
+	}
+	
+
 	public void show(){
 		showModal();
 	}
 	
 	public void hide(){
+		panel.getElement().removeAttribute("style");
 		closeModal();
 	}
 	
@@ -39,16 +55,6 @@ public class MaterialModal {
 		$wnd.jQuery('#modal1').closeModal();
 	}-*/;
 
-	public boolean isFixedFooter() {
-		return fixedFooter;
-	}
-
-	public void setFixedFooter(boolean fixedFooter) {
-		this.fixedFooter = fixedFooter;
-		if(fixedFooter){
-			panel.addStyleName("modal-fixed-footer");
-		}
-	}
 	
 	
 }
