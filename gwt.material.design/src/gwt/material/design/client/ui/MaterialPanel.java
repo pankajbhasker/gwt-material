@@ -40,7 +40,11 @@ public class MaterialPanel extends HTMLPanel{
 
 	public void setAlign(String align) {
 		this.align = align;
-		this.addStyleName(align);
+		if(align.equals("valign-wrapper")){
+			this.addStyleName(align);
+		}else{
+			this.addStyleName(align + "-align");
+		}
 	}
 
 	public String getTextColor() {

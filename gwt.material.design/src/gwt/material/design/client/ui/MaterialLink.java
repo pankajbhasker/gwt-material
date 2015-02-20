@@ -15,6 +15,9 @@ public class MaterialLink extends FocusPanel {
 	protected String fontSize = "";
 	private String wave = "";
 	private Object object;
+	private String tooltip = "";
+	private String tooltipLocation = "bottom";
+	private String tooltipDelay = "50";
 
 	public MaterialLink() {
 		// TODO Auto-generated constructor stub
@@ -26,6 +29,15 @@ public class MaterialLink extends FocusPanel {
 		super();
 		this.text = text;
 		this.textColor = textColor;
+	}
+
+	
+
+	@Override
+	protected void onAttach() {
+		// TODO Auto-generated method stub
+		super.onAttach();
+		initToolTip();
 	}
 
 
@@ -110,4 +122,44 @@ public class MaterialLink extends FocusPanel {
 		this.object = object;
 	}
 
+	public String getTooltip() {
+		return tooltip;
+	}
+	
+	public void setTooltip(String tooltip) {
+		this.tooltip = tooltip;
+		generateTooltip();
+	}
+
+	public String getTooltipLocation() {
+		return tooltipLocation;
+	}
+
+	public void setTooltipLocation(String tooltipLocation) {
+		this.tooltipLocation = tooltipLocation;
+		generateTooltip();
+	}
+
+	public String getTooltipDelay() {
+		return tooltipDelay;
+	}
+
+	public void setTooltipDelay(String tooltipDelay) {
+		this.tooltipDelay = tooltipDelay;
+		generateTooltip();
+	}
+
+	private void generateTooltip(){
+		this.addStyleName("tooltipped");
+		this.getElement().setAttribute("data-position", tooltipLocation);
+		this.getElement().setAttribute("data-delay", tooltipDelay);
+		this.getElement().setAttribute("data-tooltip", tooltip);
+	}
+
+	public native void initToolTip()/*-{
+		 $wnd.jQuery(document).ready(function(){
+		    $wnd.jQuery('.tooltipped').tooltip({delay: 50});
+		  });
+	}-*/;
+	
 }

@@ -11,7 +11,9 @@ public class MaterialWidget extends Composite{
 	protected String type = "";
 	protected Widget widget;
 	protected String align = "";
-
+	protected String tooltip = "";
+	protected String tooltipLocation = "bottom";
+	protected String tooltipDelay = "50";
 	
 	public String getWaves() {
 		return waves;
@@ -49,11 +51,17 @@ public class MaterialWidget extends Composite{
 	}
 
 	public void applyMaterialEffect() {
+		initToolTip();
 		if(widget!=null){
 			if(!waves.isEmpty()) widget.getElement().addClassName("waves-effect waves-" + waves);
 			if(!color.isEmpty()) widget.getElement().addClassName(color);
 			if(!textColor.isEmpty()) widget.getElement().addClassName(textColor + "-text");
 			if(!align.isEmpty()) widget.getElement().addClassName(align + "-align");
+			
+			if(!tooltip.isEmpty()) getWidget().addStyleName("tooltipped");
+			if(!tooltipLocation.isEmpty()) getWidget().getElement().setAttribute("data-position", tooltipLocation);
+			if(!tooltipDelay.isEmpty()) getWidget().getElement().setAttribute("data-delay", tooltipDelay);
+			if(!tooltip.isEmpty()) getWidget().getElement().setAttribute("data-tooltip", tooltip);
 		}
 	}
 
@@ -73,5 +81,38 @@ public class MaterialWidget extends Composite{
 		this.align = align;
 	}
 
+	
+	public String getTooltip() {
+		return tooltip;
+	}
+	
+	public void setTooltip(String tooltip) {
+		this.tooltip = tooltip;
+		applyMaterialEffect();
+	}
+
+	public String getTooltipLocation() {
+		return tooltipLocation;
+	}
+
+	public void setTooltipLocation(String tooltipLocation) {
+		this.tooltipLocation = tooltipLocation;
+		applyMaterialEffect();
+	}
+
+	public String getTooltipDelay() {
+		return tooltipDelay;
+	}
+
+	public void setTooltipDelay(String tooltipDelay) {
+		this.tooltipDelay = tooltipDelay;
+		applyMaterialEffect();
+	}
+
+	private native void initToolTip()/*-{
+		 $wnd.jQuery(document).ready(function(){
+		    $wnd.jQuery('.tooltipped').tooltip({delay: 50});
+		  });
+	}-*/;
 	
 }
