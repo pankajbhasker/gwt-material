@@ -36,6 +36,7 @@ public class MaterialDemo extends Composite {
 	@UiField MaterialNavigations materialNavigations;
 	@UiField MaterialCollapsibles materialCollapsibles;
 	@UiField MaterialDropDowns materialDropDowns;
+	@UiField MaterialFooterPanel materialFooters; 
 	
 	@UiField MaterialNavBar navBar;
 	@UiField MaterialTopNav topNav;
@@ -106,6 +107,11 @@ public class MaterialDemo extends Composite {
 	@UiHandler("btnMaterialDropDowns")
 	void onDropdown(ClickEvent e){
 		changeNav(materialDropDowns, "Dropdown", "You can add dropdown easily by specifying it's item content and add a UiHandler on it to implement any event.");
+	}
+	
+	@UiHandler("btnMaterialFooter")
+	void onFooter(ClickEvent e){
+		changeNav(materialFooters, "Footer", "Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.");
 	}
 	
 	private void changeNav(Composite content, String title, String description){
