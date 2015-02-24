@@ -1,6 +1,7 @@
 package gwt.material.design.client.ui;
 
 import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.user.client.ui.Widget;
 
 public class MaterialColumn extends MaterialPanel {
 
@@ -9,6 +10,16 @@ public class MaterialColumn extends MaterialPanel {
 	public MaterialColumn() {
 		super("");
 	}
+
+	
+	
+	@Override
+	public void add(Widget widget) {
+		// TODO Auto-generated method stub
+		super.add(widget);
+	}
+
+
 
 	public MaterialColumn(SafeHtml safeHtml) {
 		super(safeHtml);

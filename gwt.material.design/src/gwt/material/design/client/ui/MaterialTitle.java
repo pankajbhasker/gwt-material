@@ -34,9 +34,6 @@ public class MaterialTitle extends Composite {
 	protected void onAttach() {
 		// TODO Auto-generated method stub
 		super.onAttach();
-		if(title.isEmpty()){
-			titlePanel.removeFromParent();
-		}
 	}
 
 
