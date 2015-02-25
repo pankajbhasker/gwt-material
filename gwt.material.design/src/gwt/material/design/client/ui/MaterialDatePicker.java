@@ -49,6 +49,10 @@ public class MaterialDatePicker extends FocusPanel{
 		return getPickerDate();
 	}
 
+	public void clearValues(){
+		setDate(null);
+	}
+	
 	public Date getPickerDate(){
 		try{
 			DateTimeFormat sdf = DateTimeFormat.getFormat("d MMM, yyyy");
@@ -64,18 +68,12 @@ public class MaterialDatePicker extends FocusPanel{
 		this.date = date;
 	}
 
-
-
 	public String getPlaceholder() {
 		return placeholder;
 	}
 
-
-
 	public void setPlaceholder(String placeholder) {
 		this.placeholder = placeholder;
 	}
-	
-	
 	
 }
