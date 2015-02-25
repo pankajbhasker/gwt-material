@@ -1,34 +1,17 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:c="urn:import:gwt.material.design.client.custom">
+	
 	<ui:style>
-	.important {
-		font-weight: bold;
-	}
+	
 	</ui:style>
-	<g:HTMLPanel>
-		<div class="row">
-			<div class="col s12">
-				<ul class="tabs">
-					<li class="tab col s3">
-						<a href="#test1">Test 1</a>
-					</li>
-					<li class="tab col s3">
-						<a class="active" href="#test2">Test 2</a>
-					</li>
-					<li class="tab col s3">
-						<a href="#test3">Test 3</a>
-					</li>
-					<li class="tab col s3">
-						<a href="#test4">Test 4</a>
-					</li>
-				</ul>
-			</div>
-			<div id="test1" class="col s12">Test 1</div>
-			<div id="test2" class="col s12">Test 2</div>
-			<div id="test3" class="col s12">Test 3</div>
-			<div id="test4" class="col s12">Test 4</div>
-		</div>
-
-	</g:HTMLPanel>
+	
+	<m:MaterialRow ui:field="contentPanel">
+			<m:MaterialColumn grid="col s12">
+				<c:UnorderedList ui:field="tabPanel" addStyleNames="tabs z-depth-1" />
+			</m:MaterialColumn>
+	</m:MaterialRow>
+	
 </ui:UiBinder> 

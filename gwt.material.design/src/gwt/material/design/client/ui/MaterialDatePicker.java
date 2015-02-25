@@ -10,11 +10,10 @@ public class MaterialDatePicker extends FocusPanel{
 
 	private HTMLPanel panel;
 	private Date date = new Date();
+	private String placeholder;
 	
 	public MaterialDatePicker() {
-		this.clear();
-		panel = new HTMLPanel("<input placeholder='Date' type='date' id='materialDatePicker' class='datepicker'>");
-		this.add(panel);
+	
 	}
 	
 	
@@ -23,6 +22,10 @@ public class MaterialDatePicker extends FocusPanel{
 	protected void onAttach() {
 		// TODO Auto-generated method stub
 		super.onAttach();
+		
+		this.clear();
+		panel = new HTMLPanel("<input placeholder='"+placeholder+"' type='date' id='materialDatePicker' class='datepicker'>");
+		this.add(panel);
 		initDatePicker();
 	}
 	
@@ -53,6 +56,18 @@ public class MaterialDatePicker extends FocusPanel{
 	
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+
+
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+
+
+	public void setPlaceholder(String placeholder) {
+		this.placeholder = placeholder;
 	}
 	
 	
