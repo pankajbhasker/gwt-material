@@ -2,6 +2,7 @@ package gwt.material.design.client.ui;
 
 import java.util.Date;
 
+import com.google.gwt.core.ext.typeinfo.ParseException;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
@@ -9,7 +10,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 public class MaterialDatePicker extends FocusPanel{
 
 	private HTMLPanel panel;
-	private Date date = new Date();
+	private Date date;
 	private String placeholder;
 	
 	public MaterialDatePicker() {
@@ -45,13 +46,18 @@ public class MaterialDatePicker extends FocusPanel{
 
 	
 	public Date getDate() {
-		return date;
+		return getPickerDate();
 	}
 
 	public Date getPickerDate(){
-		DateTimeFormat sdf = DateTimeFormat.getFormat("d MMM, yyyy");
-		date = sdf.parse(getDatePickerValue());
-		return date;
+		try{
+			DateTimeFormat sdf = DateTimeFormat.getFormat("d MMM, yyyy");
+			date = sdf.parse(getDatePickerValue());
+			return date;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	public void setDate(Date date) {
