@@ -2,7 +2,6 @@ package gwt.material.design.client.ui;
 
 import java.util.Date;
 
-import com.google.gwt.core.ext.typeinfo.ParseException;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
@@ -38,7 +37,7 @@ public class MaterialDatePicker extends FocusPanel{
 	}-*/;
 	
 	public static native void initDatePicker()/*-{
-		 $wnd.jQuery('.datepicker').pickadate();
+		  $wnd.jQuery('.datepicker').pickadate();
 	}-*/;
 
 
