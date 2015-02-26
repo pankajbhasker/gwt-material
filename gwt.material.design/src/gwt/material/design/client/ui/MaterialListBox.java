@@ -261,7 +261,6 @@ public class MaterialListBox extends ListBox{
 		// TODO Auto-generated method stub
 		super.setOptionText(option, text, dir);
 	}
-
 	
 	
 }
