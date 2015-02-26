@@ -12,26 +12,24 @@ public class MaterialDatePicker extends FocusPanel{
 	private HTMLPanel panel;
 	private Date date;
 	private String placeholder;
-	
+	private String id;
 	public MaterialDatePicker() {
 	
 	}
-	
-	
-	
+		
 	@Override
 	protected void onAttach() {
 		// TODO Auto-generated method stub
 		super.onAttach();
-		
+		id = String.valueOf(hashCode());
 		this.clear();
-		panel = new HTMLPanel("<input placeholder='"+placeholder+"' type='date' id='materialDatePicker' class='datepicker'>");
+		panel = new HTMLPanel("<input placeholder='"+placeholder+"' type='date' id='"+id+"' class='datepicker'>");
 		this.add(panel);
 		initDatePicker();
 	}
 	
-	public static native String getDatePickerValue()/*-{
-		var color    = $wnd.jQuery('#materialDatePicker').val();  
+	public static native String getDatePickerValue(String id)/*-{
+		var color    = $wnd.jQuery('#' + id).val();  
 		return color;
 	}-*/;
 	
@@ -50,13 +48,13 @@ public class MaterialDatePicker extends FocusPanel{
 	}
 
 	public void clearValues(){
-		setDate(null);
+		setDatePickerValue(null);
 	}
 	
 	public Date getPickerDate(){
 		try{
 			DateTimeFormat sdf = DateTimeFormat.getFormat("d MMM, yyyy");
-			date = sdf.parse(getDatePickerValue());
+			date = sdf.parse(getDatePickerValue(id));
 			return date;
 		}catch(Exception e){
 			e.printStackTrace();
