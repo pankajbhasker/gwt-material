@@ -8,10 +8,8 @@
 	
 	</ui:style>
 	
-	<m:MaterialRow ui:field="contentPanel">
-			<m:MaterialColumn grid="col s12">
-				<c:UnorderedList ui:field="tabPanel" addStyleNames="tabs z-depth-1" />
-			</m:MaterialColumn>
-	</m:MaterialRow>
+	<m:MaterialPanel ui:field="contentPanel">
+		<c:UnorderedList ui:field="tabPanel" addStyleNames="tabs z-depth-1" />
+	</m:MaterialPanel>
 	
 </ui:UiBinder> 

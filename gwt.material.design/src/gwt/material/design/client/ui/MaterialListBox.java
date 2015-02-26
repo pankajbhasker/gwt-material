@@ -1,7 +1,6 @@
 package gwt.material.design.client.ui;
 
 import com.google.gwt.dom.client.OptionElement;
-import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.i18n.client.HasDirection.Direction;
@@ -9,6 +8,7 @@ import com.google.gwt.i18n.shared.DirectionEstimator;
 import com.google.gwt.user.client.ui.ChangeListener;
 import com.google.gwt.user.client.ui.ListBox;
 
+@SuppressWarnings("deprecation")
 public class MaterialListBox extends ListBox{
 
 	private boolean old = false;

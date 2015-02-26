@@ -19,7 +19,7 @@ public class MaterialTabs extends MaterialWidget {
 	}
 
 	@UiField
-	MaterialRow contentPanel;
+	MaterialPanel contentPanel;
 	@UiField
 	UnorderedList tabPanel;
 
@@ -37,12 +37,12 @@ public class MaterialTabs extends MaterialWidget {
 	@Override
 	protected void onAttach() {
 		super.onAttach();
-
+		name = String.valueOf(hashCode());
 		int col = 12 / tabPanel.getWidgetCount();
 		int index = tabPanel.getWidgetCount();
 		for (Widget w : tabPanel) {
 			if (w instanceof ListItem) {
-				if(!waves.isEmpty()) w.getElement().addClassName("waves-effect waves-" + waves);
+				if(!waves.isEmpty()) ((ListItem) w).getWidget(0).getElement().addClassName("waves-effect waves-" + waves);
 				if(!color.isEmpty()) w.getElement().addClassName(color);
 				if(!textColor.isEmpty()) ((ListItem) w).getWidget(0).getElement().addClassName(textColor + "-text");
 				((ListItem) w).getWidget(0).getElement().setAttribute("href", "#" + name + index);
@@ -57,8 +57,12 @@ public class MaterialTabs extends MaterialWidget {
 			indexC--;
 		}
 		initTabs();
-		
+		changeIndicator(indicatorColor);
 	}
+	
+	public native void changeIndicator(String color)/*-{
+		$wnd.jQuery( ".indicator" ).css( "background-color", color );
+	}-*/;
 
 	@UiChild(tagname = "tab")
 	public void addTab(final Widget item) {
@@ -79,14 +83,6 @@ public class MaterialTabs extends MaterialWidget {
 			$wnd.jQuery('ul.tabs').tabs();
 		});
 	}-*/;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getColor() {
 		return color;
@@ -110,7 +106,6 @@ public class MaterialTabs extends MaterialWidget {
 
 	public void setIndicatorColor(String indicatorColor) {
 		this.indicatorColor = indicatorColor;
-		
 	}
 
 	public String getWaves() {
