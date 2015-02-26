@@ -14,7 +14,7 @@
 		}
 		.panel{
 			padding-left: 5%;
-			width: 95%;
+			width: 100%;
 			margin-top: -150px;
 			padding: 10px 50px 50px 50px;
 			background: #FFF;
@@ -45,6 +45,7 @@
 					<m:sidebaritem><m:MaterialLink ui:field="btnCollapsibles" text="Collapsible" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnMaterialDropDowns" text="Dropdown" textColor="blue"/></m:sidebaritem>
 					<m:sidebaritem><m:MaterialLink ui:field="btnMaterialFooter" text="Footer" textColor="blue"/></m:sidebaritem>
+					<m:sidebaritem><m:MaterialLink ui:field="btnMaterialTabs" text="Tabs" textColor="blue"/></m:sidebaritem>
 				</m:MaterialNavBar>
 				<m:MaterialTopNav resource="{res.bg_top_nav}" ui:field="topNav"  color="blue" textColor="white">
 					<m:child>
@@ -66,6 +67,7 @@
 					<p:MaterialCollapsibles ui:field="materialCollapsibles"/>
 					<p:MaterialDropDowns ui:field="materialDropDowns"/>
 					<p:MaterialFooterPanel ui:field="materialFooters"/>
+					<p:MaterialTabsPanel ui:field="materialTabs"/>
 					<!-- <p:Team /> -->
 				</g:HTMLPanel>
 			</main>	

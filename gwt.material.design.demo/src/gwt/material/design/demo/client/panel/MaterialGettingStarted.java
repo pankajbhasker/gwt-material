@@ -23,12 +23,12 @@ public class MaterialGettingStarted extends Composite{
 
 	@UiHandler("btnDownloadAsset")
 	void onDownloadAsset(ClickEvent e){
-		Window.open("http://materializecss.com/bin/materialize-v0.95.2.zip", "_blank", "");
+		Window.open("http://materializecss.com/bin/materialize-v0.95.3.zip", "_blank", "");
 	}
 
 	@UiHandler("btnDownloadJar")
 	void onDownloadJar(ClickEvent e){
-		Window.open("http://gwt-material.appspot.com/bin/gwt.material.design.15.2.jar", "_blank", "");
+		Window.open("http://gwt-material.appspot.com/bin/gwt.material.design.15.3.jar", "_blank", "");
 	}
 	
 }	

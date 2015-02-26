@@ -2,8 +2,6 @@ package gwt.material.design.demo.client.panel;
 
 import gwt.material.design.client.ui.MaterialNavBar;
 import gwt.material.design.client.ui.MaterialTopNav;
-import gwt.material.design.client.ui.animate.MaterialAnimator;
-import gwt.material.design.client.ui.animate.Transition;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -37,13 +35,14 @@ public class MaterialDemo extends Composite {
 	@UiField MaterialCollapsibles materialCollapsibles;
 	@UiField MaterialDropDowns materialDropDowns;
 	@UiField MaterialFooterPanel materialFooters; 
+	@UiField MaterialTabsPanel materialTabs;
 	
 	@UiField MaterialNavBar navBar;
 	@UiField MaterialTopNav topNav;
 	
 	public MaterialDemo() {
 		initWidget(uiBinder.createAndBindUi(this));
-		changeNav(materialHome,"GWT Material Design", "Under Development");
+		changeNav(materialHome,"GWT Material", "Under Development");
 	}
 
 	@Override
@@ -60,7 +59,7 @@ public class MaterialDemo extends Composite {
 	
 	@UiHandler("btnAbout")
 	void onAbout(ClickEvent e){
-		changeNav(materialHome,"GWT Material Design", "Under Development");
+		changeNav(materialHome,"GWT Material", "Under Development");
 	}
 
 	
@@ -114,8 +113,13 @@ public class MaterialDemo extends Composite {
 		changeNav(materialFooters, "Footer", "Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.");
 	}
 	
+	@UiHandler("btnMaterialTabs")
+	void onTabs(ClickEvent e){
+		changeNav(materialTabs, "Tabs", "The tabs structure consists of an unordered list of tabs that have hashes corresponding to tab ids. Then when you click on each tab, only the container with the corresponding tab id will become visible.");
+	}
+	
 	private void changeNav(Composite content, String title, String description){
-		MaterialAnimator.animate(Transition.PULL, contentPanel, 500);
+		//MaterialAnimator.animate(Transition.PULL, contentPanel, 500);
 		navBar.hide();
 		contentPanel.clear();
 		contentPanel.add(content);

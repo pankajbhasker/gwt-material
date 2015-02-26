@@ -74,11 +74,11 @@
 		
 		
 		
-		<m:MaterialTitle title="Date Picker" description="Material Datepicker"/>
-		<m:MaterialDatePicker />
+		<m:MaterialTitle title="Date Picker"  description="Material Datepicker"/>
+		<m:MaterialDatePicker placeholder="Date"/>
 		
 		<pre>
-<span class="tag">&lt;m:MaterialDatePicker </span> <span class="tag">/></span>
+<span class="tag">&lt;m:MaterialDatePicker placeholder="Date"</span> <span class="tag">/></span>
 		</pre>
 		
 	</g:HTMLPanel>

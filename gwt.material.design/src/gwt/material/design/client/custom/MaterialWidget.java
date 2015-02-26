@@ -51,7 +51,7 @@ public class MaterialWidget extends Composite{
 	}
 
 	public void applyMaterialEffect() {
-		initToolTip();
+		
 		if(widget!=null){
 			if(!waves.isEmpty()) widget.getElement().addClassName("waves-effect waves-" + waves);
 			if(!color.isEmpty()) widget.getElement().addClassName(color);
@@ -63,6 +63,7 @@ public class MaterialWidget extends Composite{
 			if(!tooltipDelay.isEmpty()) getWidget().getElement().setAttribute("data-delay", tooltipDelay);
 			if(!tooltip.isEmpty()) getWidget().getElement().setAttribute("data-tooltip", tooltip);
 		}
+		initToolTip();
 	}
 
 	public Widget getWidget() {
