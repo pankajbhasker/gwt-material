@@ -4,6 +4,7 @@ import com.google.gwt.dom.client.Style.Cursor;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 public class MaterialLink extends FocusPanel {
 
@@ -18,6 +19,9 @@ public class MaterialLink extends FocusPanel {
 	private String tooltip = "";
 	private String tooltipLocation = "bottom";
 	private String tooltipDelay = "50";
+	private Widget container;
+	
+	private boolean active = false;
 
 	public MaterialLink() {
 		// TODO Auto-generated constructor stub

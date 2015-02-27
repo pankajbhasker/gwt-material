@@ -12,6 +12,9 @@
 	background-position: fixed;
 }
 
+a, a:visited{
+	color: rgba(0, 0, 0, 0.87);
+}
 .progress{
 	background-color: #EBEEF1;
 	border-radius: 5px;
