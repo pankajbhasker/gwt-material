@@ -1,6 +1,7 @@
 package gwt.material.design.client.ui;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
@@ -20,6 +21,7 @@ public class MaterialTitle extends Composite {
 	private String description = "";
 	private String color="";
 	private MaterialTitle materialTitle;
+	private double fontSize;
 	
 	@UiField HTMLPanel titlePanel;
 	@UiField Label lblTitle, lblDescription;
@@ -71,6 +73,19 @@ public class MaterialTitle extends Composite {
 
 	public void setMaterialTitle(MaterialTitle materialTitle) {
 		this.materialTitle = materialTitle;
+	}
+
+
+
+	public double getFontSize() {
+		return fontSize;
+	}
+
+
+
+	public void setFontSize(double fontSize) {
+		this.fontSize = fontSize;
+		lblTitle.getElement().getStyle().setFontSize(fontSize, Unit.EM);
 	}
 	
 	
