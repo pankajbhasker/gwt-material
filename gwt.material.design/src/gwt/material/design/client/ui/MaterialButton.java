@@ -41,28 +41,38 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 
 	public MaterialButton() {
 		initWidget(uiBinder.createAndBindUi(this));
+		
 	}
 	
 	
-	public MaterialButton(String text, String color) {
-		super();
-		this.text = text;
+	public MaterialButton(String icon, String color, String type, String waves, String tooltip) {
+		initWidget(uiBinder.createAndBindUi(this));
+		this.icon = icon;
 		this.color = color;
+		this.type = type;
+		this.waves = waves;
+		this.tooltip = tooltip;
+		initButtonStyles();
 	}
 
 
-	public MaterialButton(String text, String type, String icon, String iconPosition, String size) {
+	public MaterialButton(String text, String type, String icon, String iconPosition, String size, String tooltip) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.text = text;
 		this.type = type;
 		this.icon = icon;
 		this.iconPosition = iconPosition;
 		this.size = size;
+		this.tooltip = tooltip;
 	}
 
 	@Override
 	protected void onAttach() {
 		super.onAttach();
+		initButtonStyles();
+	}
+
+	private void initButtonStyles(){
 		switch (type) {
 		case "flat":
 			changeType(anchor);
@@ -74,7 +84,7 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 		}
 		super.applyMaterialEffect();
 	}
-
+	
 	private void changeType(ComplexPanel w){
 		super.setWidget(w);
 	
