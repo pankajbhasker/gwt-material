@@ -21,6 +21,7 @@ public class MaterialSwitch extends Composite implements HasChangeHandlers {
 	
 	@UiField CustomCheckBox cbBox;
 	private Boolean value = false;
+	private String name = "";
 
 	public MaterialSwitch() {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -30,8 +31,9 @@ public class MaterialSwitch extends Composite implements HasChangeHandlers {
 	@Override
 	protected void onAttach() {
 		// TODO Auto-generated method stub
+		name = String.valueOf(hashCode());
 		super.onAttach();
-		cbBox.getElement().setId("switch");
+		cbBox.getElement().setId(name);
 	}
 
 	public Boolean getValue() {
@@ -51,11 +53,11 @@ public class MaterialSwitch extends Composite implements HasChangeHandlers {
 
 	public void setValue(Boolean value) {
 		this.value = value;
-		setInputValue(true);
+		setInputValue(value);
 	}
 
 	public static native void setInputValue(Boolean real)/*-{
-		$wnd.jQuery('#switch').prop('checked', real);
+		$wnd.jQuery( "#" + name ).prop( "checked", true );
 	}-*/;
 
 	@Override
