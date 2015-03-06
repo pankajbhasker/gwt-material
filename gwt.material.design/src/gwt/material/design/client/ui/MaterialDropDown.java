@@ -34,6 +34,7 @@ public class MaterialDropDown extends MaterialWidget {
 	protected void onAttach() {
 		// TODO Auto-generated method stub
 		super.onAttach();
+		activates = String.valueOf(hashCode());
 		if(!activates.isEmpty()){
 			anchor.getElement().setAttribute("data-activates", activates);
 			list.getElement().setId(activates);
