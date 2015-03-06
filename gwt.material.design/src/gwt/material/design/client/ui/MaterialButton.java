@@ -128,6 +128,7 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 
 	public void setText(String text) {
 		this.text = text;
+		label.setText(text);
 	}
 
 	public String getType() {

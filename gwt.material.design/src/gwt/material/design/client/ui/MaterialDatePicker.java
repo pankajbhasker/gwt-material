@@ -50,9 +50,9 @@ public class MaterialDatePicker extends FocusPanel{
 		return getPickerDate();
 	}
 
-	public void clearValues(){
-		setDatePickerValue(null);
-	}
+	public static native void clearValues()/*-{
+		$wnd.jQuery('.datepicker').val("");
+	}-*/;
 	
 	public Date getPickerDate(){
 		try{

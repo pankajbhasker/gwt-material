@@ -1,9 +1,13 @@
 package gwt.material.design.client.ui;
 
 import gwt.material.design.client.custom.CustomIcon;
+import gwt.material.design.client.custom.CustomLabel;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.event.dom.client.HasKeyUpHandlers;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
@@ -11,7 +15,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class MaterialTextBox extends Composite {
+public class MaterialTextBox extends Composite implements HasKeyUpHandlers{
 
 	private static MaterialTextBoxUiBinder uiBinder = GWT.create(MaterialTextBoxUiBinder.class);
 
@@ -22,7 +26,11 @@ public class MaterialTextBox extends Composite {
 	private String type = "text";
 	private String icon = "";
 	private boolean isValid = true;
+	private boolean enabled;
 
+	@UiField
+	CustomLabel 
+	customLabel;
 	@UiField
 	Label lblName;
 	@UiField
@@ -33,6 +41,17 @@ public class MaterialTextBox extends Composite {
 	public MaterialTextBox() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
+	
+	
+
+	@Override
+	protected void onAttach() {
+		// TODO Auto-generated method stub
+		super.onAttach();
+		customLabel.getElement().setAttribute("for", "field");
+	}
+
+
 
 	public void setInvalid() {
 		backToDefault();
@@ -57,12 +76,7 @@ public class MaterialTextBox extends Composite {
 
 	public void setText(String text) {
 		txtBox.setText(text);
-		Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
-			public void execute() {
-				txtBox.setFocus(true);
-			}
-		});
-
+		customLabel.addStyleName("active");
 	}
 
 	public String getPlaceholder() {
@@ -100,16 +114,22 @@ public class MaterialTextBox extends Composite {
 	public void setValid(boolean isValid) {
 		this.isValid = isValid;
 	}
-	
-	public void setDisabled(boolean disabled){
-		
-		if(disabled){
-			txtBox.setEnabled(disabled);
-		} else {
-			txtBox.setEnabled(!disabled);
-		}
-		
-			
+
+	public boolean isEnabled() {
+		return enabled;
 	}
 
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+		txtBox.setEnabled(enabled);
+		
+	}
+
+
+
+	@Override
+	public HandlerRegistration addKeyUpHandler(KeyUpHandler handler) {
+		return addDomHandler(handler, KeyUpEvent.getType());
+	}
+	
 }
