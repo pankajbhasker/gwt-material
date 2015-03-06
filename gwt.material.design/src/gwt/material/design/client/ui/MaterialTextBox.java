@@ -5,6 +5,9 @@ import gwt.material.design.client.custom.CustomLabel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.HasKeyUpHandlers;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyPressEvent;
+import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -96,6 +99,19 @@ public class MaterialTextBox extends Composite implements HasKeyUpHandlers{
 	public void setType(String type) {
 		this.type = type;
 		txtBox.getElement().setAttribute("type", type);
+		if(type.equals("number")){
+			txtBox.addKeyPressHandler(new KeyPressHandler() {
+				
+				@Override
+				public void onKeyPress(KeyPressEvent event) {
+					 if (!Character.isDigit(event.getCharCode()) 
+			                    && event.getNativeEvent().getKeyCode() != KeyCodes.KEY_TAB 
+			                    && event.getNativeEvent().getKeyCode() != KeyCodes.KEY_BACKSPACE){
+			                ((TextBox) event.getSource()).cancelKey();
+			            }
+				}
+			});
+		}
 	}
 
 	public String getIcon() {
