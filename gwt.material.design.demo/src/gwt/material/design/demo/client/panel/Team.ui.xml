@@ -10,9 +10,6 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:MaterialTitle title="Our Team" description="We are a team of GWT Developers from AklaBox IT Solutions."/>
-		<m:MaterialTeamItem profile="{res.ic_karl}" name="Karl"/>
-		<m:MaterialTeamItem profile="{res.ic_glen}" name="Glen"/>
-		<m:MaterialTeamItem profile="{res.ic_jeremy}" name="Jeremy"/>
-		<m:MaterialTeamItem profile="{res.ic_kevin}" name="Kevin"/>
+		
 	</g:HTMLPanel>
 </ui:UiBinder> 

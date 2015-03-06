@@ -1,6 +1,6 @@
 package gwt.material.design.demo.client;
 
-import gwt.material.design.demo.client.panel.MaterialDemo;
+import gwt.material.design.demo.client.panel.MaterialCollectionPanel;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -11,6 +11,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 public class Gwt_material_design_demo implements EntryPoint {
 	
 	public void onModuleLoad() {
-		RootPanel.get().add(new MaterialDemo());
+		RootPanel.get().add(new MaterialCollectionPanel());
 	}
 }
