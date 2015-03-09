@@ -106,9 +106,10 @@ public class MaterialTextBox extends Composite implements HasKeyUpHandlers{
 				public void onKeyPress(KeyPressEvent event) {
 					 if (!Character.isDigit(event.getCharCode()) 
 			                    && event.getNativeEvent().getKeyCode() != KeyCodes.KEY_TAB 
-			                    && event.getNativeEvent().getKeyCode() != KeyCodes.KEY_BACKSPACE){
+			                    && event.getNativeEvent().getKeyCode() != KeyCodes.KEY_BACKSPACE
+			                    && event.getNativeEvent().getKeyCode() != 190){
 			                ((TextBox) event.getSource()).cancelKey();
-			            }
+			         }
 				}
 			});
 		}
