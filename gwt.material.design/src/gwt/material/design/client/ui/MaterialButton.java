@@ -41,7 +41,15 @@ public class MaterialButton extends MaterialWidget implements HasClickHandlers{
 
 	public MaterialButton() {
 		initWidget(uiBinder.createAndBindUi(this));
-		
+		initButtonStyles();
+	}
+	
+	public MaterialButton(String text, String color, String waves) {
+		initWidget(uiBinder.createAndBindUi(this));
+		this.text = text;
+		this.color = color;
+		this.waves = waves;
+		initButtonStyles();
 	}
 	
 	

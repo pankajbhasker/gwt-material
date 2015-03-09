@@ -39,7 +39,7 @@ public class MaterialListBox extends ListBox{
 	public void setOld(boolean old) {
 		this.old = old;
 		if(old){
-			this.addStyleName("browser-default");
+			this.addStyleName("browser-default input-field");
 		}
 	}
 
