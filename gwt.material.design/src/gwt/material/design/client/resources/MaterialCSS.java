@@ -17,4 +17,6 @@ public interface MaterialCSS extends CssResource {
 	
 	//CUSTOM LOADING
 	String progress();
+	
+	String disabled();
 }
