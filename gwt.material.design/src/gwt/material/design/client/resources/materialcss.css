@@ -120,4 +120,17 @@ th{
 .pull{
 	margin-top: -150px !important;
 }
+.disabled{
+	background-color: #DFDFDF !important;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	color: #9F9F9F;
+	cursor: default;
+}
 
+.disabled:hover{
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+}

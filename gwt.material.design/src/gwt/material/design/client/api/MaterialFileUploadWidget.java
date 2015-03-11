@@ -77,15 +77,13 @@ public class MaterialFileUploadWidget extends Composite {
 	protected void onAttach() {
 		// TODO Auto-generated method stub
 		super.onAttach();
+		
 	}
 
 
 
 	public void initUpload() {  
-
-       
         final Map<String, Image> cancelButtons = new LinkedHashMap<String, Image>();  
-      
         uploader.setUploadURL(servletUrl) 
                 .setButtonText(text)
                 .setButtonCursor(Uploader.Cursor.HAND)  
@@ -271,6 +269,29 @@ public class MaterialFileUploadWidget extends Composite {
 
 	public Uploader getUploader() {
 		return uploader;
-	}  
+	}
+
+
+	public FocusPanel getDropArea() {
+		return dropArea;
+	}
+
+
+	public void setDropArea(FocusPanel dropArea) {
+		this.dropArea = dropArea;
+	}
+
+
+	public void setDisabled(boolean disabled) {
+		if(disabled){
+			uploader.addStyleName(MaterialResources.INSTANCE.materialcss().disabled());
+			uploader.setButtonDisabled(true);
+		}else{
+			uploader.removeStyleName(MaterialResources.INSTANCE.materialcss().disabled());
+			uploader.setButtonDisabled(false);
+		}
+	}
+
     
+	
 }
