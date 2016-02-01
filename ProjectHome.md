@@ -1,0 +1,1 @@
+The project aims to have a material look in all GWT Widgets specially buttons, dialogs, forms, datepicker and etc.
